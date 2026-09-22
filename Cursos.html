@@ -1,0 +1,1602 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cursos | Etec Alberto Santos Dumont</title>
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           CONFIGURAÇÕES GERAIS
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #202020;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+        }
+
+
+        /* =====================================================
+           BARRA SUPERIOR
+        ====================================================== */
+
+        .top-bar {
+            background: #151515;
+            color: #ffffff;
+            font-size: 13px;
+        }
+
+        .top-content {
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top-content span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .top-social a {
+            transition: 0.3s;
+        }
+
+        .top-social a:hover {
+            color: #e30613;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        .header {
+            height: 82px;
+            background: #ffffff;
+            border-bottom: 1px solid #eeeeee;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        /* LOGO */
+
+        .logo img {
+            width: 180px;
+            height: 58px;
+            object-fit: contain;
+        }
+
+
+        /* MENU */
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-menu a {
+            color: #333333;
+            font-size: 14px;
+            font-weight: 600;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .nav-menu a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 2px;
+
+            background: #e30613;
+
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #e30613;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .courses-hero {
+            background: linear-gradient(
+                120deg,
+                #111111,
+                #262626
+            );
+
+            color: #ffffff;
+
+            padding: 90px 0;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .courses-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            border-radius: 50%;
+
+            background: rgba(227, 6, 19, 0.10);
+
+            right: -120px;
+            top: -150px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-label {
+            color: #e30613;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        .courses-hero h1 {
+            font-size: clamp(45px, 7vw, 78px);
+            line-height: 0.95;
+
+            margin: 15px 0 20px;
+
+            letter-spacing: -3px;
+        }
+
+        .courses-hero h1 span {
+            color: #e30613;
+        }
+
+        .courses-hero p {
+            color: #cfcfcf;
+            max-width: 650px;
+            font-size: 16px;
+        }
+
+
+        /* =====================================================
+           INTRODUÇÃO
+        ====================================================== */
+
+        .intro {
+            padding: 70px 0 30px;
+            background: #ffffff;
+        }
+
+        .intro-content {
+            text-align: center;
+            max-width: 760px;
+            margin: auto;
+        }
+
+        .section-label {
+            color: #e30613;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .intro h2 {
+            font-size: 40px;
+            margin: 10px 0;
+        }
+
+        .intro h2 span {
+            color: #e30613;
+        }
+
+        .intro p {
+            color: #666666;
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           SEÇÃO DE CURSOS
+        ====================================================== */
+
+        .courses-section {
+            padding: 55px 0 100px;
+            background: #ffffff;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .category-title .line {
+            width: 45px;
+            height: 4px;
+            background: #e30613;
+        }
+
+        .category-title h2 {
+            font-size: 28px;
+        }
+
+
+        /* =====================================================
+           GRID
+        ====================================================== */
+
+        .course-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+
+            margin-bottom: 75px;
+        }
+
+
+        /* =====================================================
+           CARD
+        ====================================================== */
+
+        .course-card {
+            background: #ffffff;
+
+            border: 1px solid #e7e7e7;
+
+            overflow: hidden;
+
+            position: relative;
+
+            transition: 0.35s;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+
+
+        /* =====================================================
+           IMAGEM
+        ====================================================== */
+
+        .course-image {
+            height: 230px;
+
+            background: #202020;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: 0.5s;
+        }
+
+        .course-card:hover .course-image img {
+            transform: scale(1.06);
+        }
+
+
+        /* =====================================================
+           CÓDIGO DO M
+        ====================================================== */
+
+        .course-code {
+            position: absolute;
+
+            top: 15px;
+            left: 15px;
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+
+            background: rgba(0, 0, 0, 0.75);
+
+            color: #ffffff;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 16px;
+
+            font-weight: 900;
+
+            backdrop-filter: blur(5px);
+        }
+
+
+        /* =====================================================
+           CONTEÚDO
+        ====================================================== */
+
+        .course-content {
+            padding: 25px;
+        }
+
+        .course-type {
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            font-weight: bold;
+
+            color: #e30613;
+        }
+
+        .course-content h3 {
+            font-size: 25px;
+            margin: 7px 0 10px;
+        }
+
+        .course-content p {
+            color: #666666;
+            font-size: 14px;
+            min-height: 70px;
+        }
+
+
+        /* =====================================================
+           BOTÃO
+        ====================================================== */
+
+        .course-link {
+            margin-top: 20px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            color: #e30613;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .course-link:hover {
+            gap: 14px;
+        }
+
+
+        /* =====================================================
+           IDENTIDADE DOS M's
+        ====================================================== */
+
+        /* MI */
+
+        .mi .course-image {
+            background: #202020;
+        }
+
+        .mi .course-code {
+            border: 2px solid #ffffff;
+        }
+
+
+        /* ML */
+
+        .ml .course-image {
+            background: #64152c;
+        }
+
+        .ml .course-code {
+            background: #8f6b20;
+            color: #ffffff;
+        }
+
+        .ml .course-type {
+            color: #8f6b20;
+        }
+
+
+        /* MS */
+
+        .ms .course-image {
+            background: #70bde8;
+        }
+
+        .ms .course-code {
+            background: #ffffff;
+            color: #2782b5;
+        }
+
+        .ms .course-type {
+            color: #2782b5;
+        }
+
+
+        /* ME */
+
+        .me .course-image {
+            background: #5a1b72;
+        }
+
+        .me .course-code {
+            background: #8e44ad;
+        }
+
+        .me .course-type {
+            color: #7b2999;
+        }
+
+
+        /* MG */
+
+        .mg .course-image {
+            background: #d8a900;
+        }
+
+        .mg .course-code {
+            background: #ffffff;
+            color: #b88900;
+        }
+
+        .mg .course-type {
+            color: #b88900;
+        }
+
+
+        /* MA */
+
+        .ma .course-image {
+            background: #c40012;
+        }
+
+        .ma .course-code {
+            background: #e30613;
+        }
+
+        .ma .course-type {
+            color: #d00012;
+        }
+
+
+        /* MB */
+
+        .mb .course-image {
+            background: #333333;
+        }
+
+        .mb .course-code {
+            background: #444444;
+        }
+
+
+        /* MC */
+
+        .mc .course-image {
+            background: #333333;
+        }
+
+        .mc .course-code {
+            background: #444444;
+        }
+
+
+        /* MGA */
+
+        .mga .course-image {
+            background: #333333;
+        }
+
+
+        /* =====================================================
+           CURSOS EM BREVE
+        ====================================================== */
+
+        .coming-soon {
+            opacity: 0.88;
+        }
+
+        .coming-soon .course-link {
+            color: #777777;
+        }
+
+
+        /* =====================================================
+           CTA
+        ====================================================== */
+
+        .cta {
+            padding: 75px 0;
+
+            background: #e30613;
+
+            color: #ffffff;
+        }
+
+        .cta-content {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .cta span {
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            font-weight: bold;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin: 5px 0;
+        }
+
+        .cta p {
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background: #ffffff;
+
+            color: #d00010;
+
+            padding: 15px 23px;
+
+            font-weight: bold;
+
+            white-space: nowrap;
+
+            transition: 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .footer {
+            background: #111111;
+
+            color: #ffffff;
+
+            padding: 50px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 35px;
+
+            border-bottom: 1px solid #292929;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer p {
+            color: #999999;
+
+            font-size: 13px;
+
+            max-width: 420px;
+        }
+
+        .footer a {
+            display: block;
+
+            color: #999999;
+
+            font-size: 13px;
+
+            margin-bottom: 8px;
+
+            transition: 0.3s;
+        }
+
+        .footer a:hover {
+            color: #e30613;
+        }
+
+        .footer-bottom {
+            padding-top: 22px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            color: #666666;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ====================================================== */
+
+        @media (max-width: 950px) {
+
+            .nav-menu {
+                gap: 15px;
+            }
+
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .top-content {
+                justify-content: center;
+            }
+
+            .top-social {
+                display: none;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .courses-hero {
+                padding: 70px 0;
+            }
+
+            .courses-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .cta-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BARRA SUPERIOR
+    ====================================================== -->
+
+    <div class="top-bar">
+
+        <div class="container top-content">
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                Guarujá - SP
+            </span>
+
+            <span>
+                <i class="fa-solid fa-graduation-cap"></i>
+                Etec Alberto Santos Dumont
+            </span>
+
+            <div class="top-social">
+
+                <a
+                    href="https://www.instagram.com/etecalbertosantosdumont/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+                <a
+                    href="https://www.facebook.com/EtecAlbertoSantosDumont/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="YouTube">
+
+                    <i class="fa-brands fa-youtube"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="container nav-container">
+
+            <!-- LOGO -->
+
+            <a href="../html/index.html.html" class="logo">
+
+                <img
+                    src="../Imagem/etec_alberto_santos_dumont_logo.jpg"
+                    alt="Etec Alberto Santos Dumont">
+
+            </a>
+
+
+            <!-- MENU -->
+
+            <nav class="nav-menu">
+
+                <a href="../html/index.html">
+                    Início
+                </a>
+
+                <a href="../html/Sobre.html">
+                    A Etec
+                </a>
+
+                <a href="../html/Cursos.html" class="active">
+                    Cursos
+                </a>
+
+                <a href="../html/Parceiros.html">
+                    Parceiros
+                </a>
+
+                <a href="../html/eventos.html">
+                    Eventos
+                </a>
+
+                <a href="../html/contatos.html">
+                    Contato
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="courses-hero">
+
+        <div class="container hero-content">
+
+            <span class="hero-label">
+                FORMAÇÃO PROFISSIONAL
+            </span>
+
+            <h1>
+                Encontre o seu
+                <span>curso.</span>
+            </h1>
+
+            <p>
+                Conheça as formações oferecidas pela Etec Alberto
+                Santos Dumont e escolha o caminho que mais combina
+                com seus objetivos.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRODUÇÃO
+    ====================================================== -->
+
+    <section class="intro">
+
+        <div class="container intro-content">
+
+            <span class="section-label">
+                NOSSAS FORMAÇÕES
+            </span>
+
+            <h2>
+                Escolha onde
+                <span>começar.</span>
+            </h2>
+
+            <p>
+                Cada formação possui sua própria identidade,
+                proposta e área de atuação. Clique em um curso
+                para conhecer todos os detalhes.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CURSOS
+    ====================================================== -->
+
+    <section class="courses-section">
+
+        <div class="container">
+
+
+            <!-- =================================================
+                 ENSINO MÉDIO COM ÊNFASE
+            ================================================== -->
+
+            <div class="category-title">
+
+                <div class="line"></div>
+
+                <h2>
+                    Ensino Médio com Ênfase
+                </h2>
+
+            </div>
+
+
+            <div class="course-grid">
+
+
+                <!-- ================================
+                     MA
+                ================================= -->
+
+                <article class="course-card ma">
+
+                    <div class="course-image">
+
+                        <img
+                            src="../Imagem/MA Excelsior.jpeg"
+                            alt="MA Excelsior">
+
+                        <div class="course-code">
+                            MA
+                        </div>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-type">
+                            ENSINO MÉDIO • ÊNFASE
+                        </span>
+
+                        <h3>
+                            Ciências da Natureza e suas Tecnologias
+                        </h3>
+
+                        <p>
+                            Formação com ênfase em Ciências da
+                            Natureza e suas Tecnologias.
+                        </p>
+
+                        <a
+                            href="../html/MA.html"
+                            class="course-link">
+
+                            Conhecer o MA
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                            <!-- ================================
+                MB
+            ================================= -->
+
+            <article class="course-card mb">
+
+                <div class="course-image">
+
+                    <img
+                        src="../Imagem/MB Superbus.png"
+                        alt="MB Superbus">
+
+                    <div class="course-code">
+                        MB
+                    </div>
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="course-type">
+                        ENSINO MÉDIO • ÊNFASE
+                    </span>
+
+                    <h3>
+                        Matemática e suas Tecnologias
+                    </h3>
+
+                    <p>
+                        Ensino Médio com ênfase em Matemática
+                        e suas Tecnologias.
+                    </p>
+
+                    <a
+                        href="../html/MB.html"
+                        class="course-link">
+
+                        Conhecer o MB
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================================
+                MC
+            ================================= -->
+
+            <article class="course-card mc">
+
+                <div class="course-image">
+
+                    <img
+                        src="../Imagem/MC Plus Ultra.png"
+                        alt="MC Plus-Ultra">
+
+                    <div class="course-code">
+                        MC
+                    </div>
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="course-type">
+                        ENSINO MÉDIO • ÊNFASE
+                    </span>
+
+                    <h3>
+                        Ciências
+                        Humanas e suas Tecnologias
+                    </h3>
+
+                    <p>
+                        Ensino Médio com ênfase em Ciências
+                        Humanas e suas Tecnologias.
+                    </p>
+
+                    <a
+                        href="../html/MC.html"
+                        class="course-link">
+
+                        Conhecer o MC
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+                
+
+            </div>
+
+
+            <!-- =================================================
+                 CURSOS TÉCNICOS
+            ================================================== -->
+
+            <div class="category-title">
+
+                <div class="line"></div>
+
+                <h2>
+                    Cursos Técnicos
+                </h2>
+
+            </div>
+
+
+            <div class="course-grid">
+
+
+                <!-- ================================
+                     MS
+                ================================= -->
+
+                <article class="course-card ms">
+
+                    <div class="course-image">
+
+                        <img
+                            src="../Imagem/MS Fidelis.jpeg"
+                            alt="MS Fidelis">
+
+                        <div class="course-code">
+                            MS
+                        </div>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-type">
+                            CURSO TÉCNICO
+                        </span>
+
+                        <h3>
+                            Secretariado
+                        </h3>
+
+                        <p>
+                            Organização, comunicação e competências
+                            para o ambiente profissional.
+                        </p>
+
+                        <a
+                            href="../html/MS.html"
+                            class="course-link">
+
+                            Conhecer o MS
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ================================
+                     ME
+                ================================= -->
+
+                <article class="course-card me">
+
+                    <div class="course-image">
+
+                        <img
+                            src="../Imagem/ME TEMERITAS.jpeg"
+                            alt="ME Temeritas">
+
+                        <div class="course-code">
+                            ME
+                        </div>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-type">
+                            CURSO TÉCNICO
+                        </span>
+
+                        <h3>
+                            Eventos
+                        </h3>
+
+                        <p>
+                            Planejamento, organização e realização
+                            de eventos e experiências.
+                        </p>
+
+                        <a
+                            href="../html/ME.html"
+                            class="course-link">
+
+                            Conhecer o ME
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ================================
+                     MG
+                ================================= -->
+
+                <article class="course-card mg">
+
+                    <div class="course-image">
+
+                        <img
+                            src="../Imagem/mg ostendes.png"
+                            alt="MG Ostende">
+
+                        <div class="course-code">
+                            MG
+                        </div>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-type">
+                            CURSO TÉCNICO
+                        </span>
+
+                        <h3>
+                            Guia de Turismo
+                        </h3>
+
+                        <p>
+                            Planejamento turístico, atendimento,
+                            cultura e orientação de visitantes.
+                        </p>
+
+                        <a
+                            href="../html/MG.html"
+                            class="course-link">
+
+                            Conhecer o MG
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ================================
+                     ML
+                ================================= -->
+
+                <article class="course-card ml">
+
+                    <div class="course-image">
+
+                        <img
+                            src="../Imagem/ML Vikings.png"
+                            alt="ML Vikings">
+
+                        <div class="course-code">
+                            ML
+                        </div>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-type">
+                            CURSO TÉCNICO
+                        </span>
+
+                        <h3>
+                            Logística
+                        </h3>
+
+                        <p>
+                            Organização, planejamento, estoque,
+                            transporte e distribuição.
+                        </p>
+
+                        <a
+                            href="../html/ML.html"
+                            class="course-link">
+
+                            Conhecer o ML
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ================================
+                     MI
+                ================================= -->
+
+                <article class="course-card mi">
+
+                    <div class="course-image">
+
+                        <img
+                            src="../Imagem/MI Sapientia.jpg"
+                            alt="MI Sapientia">
+
+                        <div class="course-code">
+                            MI
+                        </div>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-type">
+                            CURSO TÉCNICO
+                        </span>
+
+                        <h3>
+                            Informática
+                        </h3>
+
+                        <p>
+                            Tecnologia, programação, desenvolvimento
+                            e soluções digitais.
+                        </p>
+
+                        <a
+                            href="../html/MI.html"
+                            class="course-link">
+
+                            Conhecer o MI
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ================================
+                     MGA
+                ================================= -->
+
+                <article class="course-card mga">
+
+                    <div class="course-image">
+
+                        <img
+                            src="../Imagem/MGA invicti.jpeg"
+                            alt="MGA Invicti">
+
+                        <div class="course-code">
+                            MGA
+                        </div>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-type">
+                            CURSO TÉCNICO
+                        </span>
+
+                        <h3>
+                            Gastronomia
+                        </h3>
+
+                        <p>
+                            Formação voltada à preparação de alimentos,
+                            técnicas culinárias, criação de pratos e
+                            experiências gastronômicas.
+                        </p>
+
+                        <a
+                            href="../html/Mga.html"
+                            class="course-link">
+
+                            Conhecer o MGA
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="cta">
+
+        <div class="container cta-content">
+
+            <div>
+
+                <span>
+                    ETEC ALBERTO SANTOS DUMONT
+                </span>
+
+                <h2>
+                    Qual caminho combina com você?
+                </h2>
+
+                <p>
+                    Conheça nossas formações e escolha seu próximo passo.
+                </p>
+
+            </div>
+
+            <a
+                href="../html/Sobre.html"
+                class="btn-white">
+
+                Conheça a Etec
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <!-- SOBRE -->
+
+                <div>
+
+                    <h3>
+                        Etec Alberto Santos Dumont
+                    </h3>
+
+                    <p>
+                        Educação técnica e profissional
+                        em Guarujá - SP.
+                    </p>
+
+                </div>
+
+
+                <!-- NAVEGAÇÃO -->
+
+                <div>
+
+                    <h3>
+                        Navegação
+                    </h3>
+
+                    <a href="../html/index.html">
+                        Início
+                    </a>
+
+                    <a href="../html/Sobre.html">
+                        A Etec
+                    </a>
+
+                    <a href="../html/Cursos.html">
+                        Cursos
+                    </a>
+
+                    <a href="../html/Parceiros.html">
+                        Parceiros
+                    </a>
+
+                    <a href="../html/eventos.html">
+                        Eventos
+                    </a>
+
+                    <a href="../html/contatos.html">
+                        Contato
+                    </a>
+
+                </div>
+
+
+                <!-- REDES SOCIAIS -->
+
+                <div>
+
+                    <h3>
+                        Redes sociais
+                    </h3>
+
+                    <a
+                        href="https://www.instagram.com/etecalbertosantosdumont/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                        Instagram
+
+                    </a>
+
+                    <a
+                        href="https://www.facebook.com/EtecAlbertoSantosDumont/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <i class="fa-brands fa-facebook"></i>
+
+                        Facebook
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- RODAPÉ -->
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Etec Alberto Santos Dumont
+                </span>
+
+                <span>
+                    Guarujá - SP
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

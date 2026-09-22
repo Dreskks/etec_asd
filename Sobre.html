@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sobre | Etec Alberto Santos Dumont</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+        }
+
+
+        /* =========================
+           BARRA SUPERIOR
+        ========================== */
+
+        .top-bar {
+            background: #151515;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .top-content {
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top-content span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .top-social a {
+            transition: .3s;
+        }
+
+        .top-social a:hover {
+            color: #e30613;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .header {
+            height: 82px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            width: 180px;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-menu a {
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: #e30613;
+            transition: .3s;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #e30613;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .page-hero {
+            min-height: 430px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.92),
+                    rgba(0,0,0,.70),
+                    rgba(120,0,0,.50)
+                ),
+                url("../Imagem/escola.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+
+            color: white;
+        }
+
+        .page-hero-content {
+            max-width: 780px;
+        }
+
+        .page-label {
+            display: inline-block;
+            border-left: 4px solid #e30613;
+            padding-left: 12px;
+            color: #ddd;
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: .95;
+            margin: 18px 0;
+            letter-spacing: -3px;
+        }
+
+        .page-hero h1 span {
+            color: #e30613;
+        }
+
+        .page-hero p {
+            max-width: 650px;
+            color: #ddd;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           HISTÓRIA
+        ========================== */
+
+        .history {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .history-image {
+            height: 470px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .history-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .history-image:hover img {
+            transform: scale(1.04);
+        }
+
+        .section-label {
+            color: #e30613;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .history-content h2 {
+            font-size: 48px;
+            line-height: 1;
+            margin: 15px 0 25px;
+        }
+
+        .history-content h2 span {
+            color: #e30613;
+        }
+
+        .history-content p {
+            color: #555;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           MISSÃO
+        ========================== */
+
+        .mission {
+            padding: 100px 0;
+            background: #151515;
+            color: white;
+        }
+
+        .mission-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .mission-header h2 {
+            font-size: 48px;
+            margin-top: 10px;
+        }
+
+        .mission-header h2 span {
+            color: #e30613;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .mission-card {
+            padding: 40px 30px;
+            background: #202020;
+            border: 1px solid #303030;
+            transition: .3s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-6px);
+            border-color: #e30613;
+        }
+
+        .mission-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #35080c;
+            color: #e30613;
+
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .mission-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .mission-card p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           VALORES
+        ========================== */
+
+        .values {
+            padding: 100px 0;
+            background: #f5f5f5;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .values-content h2 {
+            font-size: 48px;
+            line-height: 1;
+            margin: 15px 0 25px;
+        }
+
+        .values-content h2 span {
+            color: #e30613;
+        }
+
+        .values-content p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .value-item {
+            background: white;
+            padding: 22px;
+            border-left: 4px solid #e30613;
+            box-shadow: 0 5px 20px rgba(0,0,0,.05);
+            transition: .3s;
+        }
+
+        .value-item:hover {
+            transform: translateX(5px);
+        }
+
+        .value-item i {
+            color: #e30613;
+            margin-right: 8px;
+        }
+
+        .value-item strong {
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           EQUIPE
+        ========================== */
+
+        .team {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .team-header h2 {
+            font-size: 48px;
+            margin-top: 10px;
+        }
+
+        .team-header h2 span {
+            color: #e30613;
+        }
+
+        .team-header p {
+            max-width: 650px;
+            margin: 15px auto 0;
+            color: #666;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .team-card {
+            background: #f7f7f7;
+            border: 1px solid #eee;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.10);
+        }
+
+        .team-photo {
+            height: 270px;
+            background: #dedede;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #999;
+            font-size: 55px;
+            overflow: hidden;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 22px;
+        }
+
+        .team-info small {
+            color: #e30613;
+            font-size: 10px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .team-info h3 {
+            font-size: 20px;
+            margin: 5px 0;
+        }
+
+        .team-info p {
+            color: #777;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            padding: 75px 0;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #a9000b,
+                    #e30613
+                );
+
+            color: white;
+        }
+
+        .cta-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .cta span {
+            font-size: 10px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin: 5px 0;
+        }
+
+        .cta p {
+            opacity: .9;
+        }
+
+        .btn-white {
+            background: white;
+            color: #c4000d;
+            padding: 15px 22px;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: .3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,.15);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .footer {
+            background: #111;
+            color: white;
+            padding: 50px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #292929;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer p {
+            color: #999;
+            font-size: 13px;
+            max-width: 420px;
+        }
+
+        .footer a {
+            display: block;
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 8px;
+            transition: .3s;
+        }
+
+        .footer a:hover {
+            color: #e30613;
+        }
+
+        .footer-bottom {
+            padding-top: 22px;
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           RESPONSIVO
+        ========================== */
+
+        @media (max-width: 950px) {
+
+            .nav-menu {
+                gap: 15px;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 750px) {
+
+            .top-content {
+                justify-content: center;
+            }
+
+            .top-content > span:nth-child(2),
+            .top-social {
+                display: none;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .history-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .history-image {
+                height: 320px;
+            }
+
+            .values-list {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .page-hero h1 {
+                font-size: 52px;
+            }
+
+            .history-content h2,
+            .values-content h2,
+            .mission-header h2,
+            .team-header h2 {
+                font-size: 38px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- BARRA SUPERIOR -->
+
+    <div class="top-bar">
+
+        <div class="container top-content">
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                Guarujá - SP
+            </span>
+
+            <span>
+                <i class="fa-solid fa-phone"></i>
+            </span>
+
+            <div class="top-social">
+
+                <a href="https://www.instagram.com/etecalbertosantosdumont/"
+                    target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/EtecAlbertoSantosDumont/"
+                    target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="container nav-container">
+
+            <a href="../html/index.html.html" class="logo">
+
+                <img
+                    src="../Imagem/etec_alberto_santos_dumont_logo.jpg"
+                    alt="Etec Alberto Santos Dumont">
+
+            </a>
+
+
+            <nav class="nav-menu">
+
+                <a href="../html/index.html.html">
+                    Início
+                </a>
+
+                <a href="../html/Sobre.html" class="active">
+                    A Etec
+                </a>
+
+                <a href="../html/Cursos.html">
+                    Cursos
+                </a>
+
+                <a href="../html/Parceiros.html">
+                    Parceiros
+                </a>
+
+                <a href="../html/eventos.html">
+                    Eventos
+                </a>
+
+                <a href="../html/contatos.html">
+                    Contato
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="page-hero">
+
+        <div class="container page-hero-content">
+
+            <span class="page-label">
+                ETEC ALBERTO SANTOS DUMONT
+            </span>
+
+            <h1>
+                Sobre a <span>Etec</span>
+            </h1>
+
+            <p>
+                Conheça a história, a missão, os valores e as
+                pessoas que fazem parte da Etec Alberto Santos Dumont.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- HISTÓRIA -->
+
+    <section class="history">
+
+        <div class="container history-grid">
+
+            <div class="history-image">
+
+                <img
+                    src="../Imagem/escola.jpg"
+                    alt="Etec Alberto Santos Dumont">
+
+            </div>
+
+
+            <div class="history-content">
+
+                <span class="section-label">
+                    NOSSA HISTÓRIA
+                </span>
+
+                <h2>
+                    Uma escola que
+                    <span>prepara para o futuro</span>
+                </h2>
+
+                <p>
+                    A Etec Alberto Santos Dumont faz parte da rede
+                    de Escolas Técnicas Estaduais do Centro Paula
+                    Souza e está localizada em Guarujá, no litoral
+                    de São Paulo.
+                </p>
+
+                <p>
+                    A instituição tem como objetivo oferecer
+                    formação de qualidade, unindo o Ensino Médio
+                    à educação profissional e técnica.
+                </p>
+
+                <p>
+                    Ao longo de sua trajetória, a Etec tornou-se
+                    um espaço de aprendizagem, desenvolvimento
+                    profissional e convivência para estudantes
+                    da região.
+                </p>
+
+                <p>
+                    Atualmente, a escola oferece diferentes
+                    cursos e formações, permitindo que os alunos
+                    desenvolvam conhecimentos para continuar seus
+                    estudos e ingressar no mercado de trabalho.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISSÃO -->
+
+    <section class="mission">
+
+        <div class="container">
+
+            <div class="mission-header">
+
+                <span class="section-label">
+                    NOSSO PROPÓSITO
+                </span>
+
+                <h2>
+                    Missão da <span>Etec</span>
+                </h2>
+
+            </div>
+
+
+            <div class="mission-grid">
+
+                <div class="mission-card">
+
+                    <div class="mission-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <h3>
+                        Missão
+                    </h3>
+
+                    <p>
+                        Oferecer educação pública de qualidade,
+                        contribuindo para a formação acadêmica,
+                        profissional e cidadã dos estudantes.
+                    </p>
+
+                </div>
+
+
+                <div class="mission-card">
+
+                    <div class="mission-icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+
+                    <h3>
+                        Visão
+                    </h3>
+
+                    <p>
+                        Ser reconhecida pela qualidade de sua
+                        formação e pela preparação dos estudantes
+                        para os desafios acadêmicos e profissionais.
+                    </p>
+
+                </div>
+
+
+                <div class="mission-card">
+
+                    <div class="mission-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <h3>
+                        Compromisso
+                    </h3>
+
+                    <p>
+                        Incentivar o desenvolvimento de competências,
+                        responsabilidade, autonomia e participação
+                        na sociedade.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VALORES -->
+
+    <section class="values">
+
+        <div class="container values-grid">
+
+            <div class="values-content">
+
+                <span class="section-label">
+                    NOSSOS PRINCÍPIOS
+                </span>
+
+                <h2>
+                    Valores que fazem parte da
+                    <span>nossa comunidade</span>
+                </h2>
+
+                <p>
+                    A formação de um estudante vai além da sala
+                    de aula. Por isso, a Etec valoriza princípios
+                    que contribuem para o desenvolvimento pessoal,
+                    acadêmico e profissional.
+                </p>
+
+            </div>
+
+
+            <div class="values-list">
+
+                <div class="value-item">
+                    <i class="fa-solid fa-check"></i>
+                    <strong>Respeito</strong>
+                </div>
+
+                <div class="value-item">
+                    <i class="fa-solid fa-check"></i>
+                    <strong>Ética</strong>
+                </div>
+
+                <div class="value-item">
+                    <i class="fa-solid fa-check"></i>
+                    <strong>Responsabilidade</strong>
+                </div>
+
+                <div class="value-item">
+                    <i class="fa-solid fa-check"></i>
+                    <strong>Compromisso</strong>
+                </div>
+
+                <div class="value-item">
+                    <i class="fa-solid fa-check"></i>
+                    <strong>Cooperação</strong>
+                </div>
+
+                <div class="value-item">
+                    <i class="fa-solid fa-check"></i>
+                    <strong>Desenvolvimento</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EQUIPE -->
+
+    <section class="team">
+
+        <div class="container">
+
+            <div class="team-header">
+
+                <span class="section-label">
+                    NOSSA EQUIPE
+                </span>
+
+                <h2>
+                    Quem faz a
+                    <span>Etec acontecer</span>
+                </h2>
+
+                <p>
+                    Conheça alguns dos profissionais responsáveis
+                    pela organização, coordenação e funcionamento
+                    da nossa instituição.
+                </p>
+
+            </div>
+
+
+            <div class="team-grid">
+
+
+                <!-- MEMBRO 1 -->
+
+                <div class="team-card">
+
+                    <div class="team-photo">
+
+                        <img
+                            src="../Imagem/Diretor.jpg"
+                            alt="José Carlos">
+
+                    </div>
+
+                    <div class="team-info">
+
+                        <small>
+                            DIREÇÃO
+                        </small>
+
+                        <h3>
+                            José Carlos
+                        </h3>
+
+                        <p>
+                            Diretor da Etec
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMBRO 2 -->
+
+                <div class="team-card">
+
+                    <div class="team-photo">
+
+                        <img
+                            src="../Imagem/Celia .png"
+                            alt="Celia Regina">
+
+                    </div>
+
+                    <div class="team-info">
+
+                        <small>
+                            DIREÇÃO
+                        </small>
+
+                        <h3>
+                            Celia Regina
+                        </h3>
+
+                        <p>
+                            Coordenadora
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMBRO 3 -->
+
+                <div class="team-card">
+
+                    <div class="team-photo">
+
+                        <img
+                            src="../Imagem/Tiagão.png"
+                            alt="Pai do MI">
+
+                    </div>
+
+                    <div class="team-info">
+
+                        <small>
+                            COORDENAÇÃO
+                        </small>
+
+                        <h3>
+                            Pai do MI
+                        </h3>
+
+                        <p>
+                            Coordenador Noturno
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMBRO 4 -->
+
+                <div class="team-card">
+
+                    <div class="team-photo">
+
+                        <img
+                            src="../Imagem/Criss.png"
+                            alt="Mãe do ML">
+
+                    </div>
+
+                    <div class="team-info">
+
+                        <small>
+                            COORDENAÇÃO
+                        </small>
+
+                        <h3>
+                            Mãe do ML
+                        </h3>
+
+                        <p>
+                            Professora
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="container cta-content">
+
+            <div>
+
+                <span>
+                    FAÇA PARTE DA ETEC
+                </span>
+
+                <h2>
+                    Seu futuro começa aqui.
+                </h2>
+
+                <p>
+                    Conheça nossos cursos e descubra novas possibilidades.
+                </p>
+
+            </div>
+
+
+            <a href="Cursos.html" class="btn-white">
+
+                Conheça nossos cursos
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <h3>
+                        Etec Alberto Santos Dumont
+                    </h3>
+
+                    <p>
+                        Educação técnica e profissional
+                        em Guarujá - SP.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Navegação
+                    </h3>
+
+                    <a href="index.html">
+                        Início
+                    </a>
+
+                    <a href="Sobre.html">
+                        A Etec
+                    </a>
+
+                    <a href="Cursos.html">
+                        Cursos
+                    </a>
+
+                    <a href="eventos.html">
+                        Eventos
+                    </a>
+
+                    <a href="contatos.html">
+                        Contato
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Redes sociais
+                    </h3>
+
+                    <a
+                        href="https://www.instagram.com/etecalbertosantosdumont/"
+                        target="_blank">
+
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+
+                    </a>
+
+                    <a
+                        href="https://www.facebook.com/EtecAlbertoSantosDumont/"
+                        target="_blank">
+
+                        <i class="fa-brands fa-facebook"></i>
+                        Facebook
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Etec Alberto Santos Dumont
+                </span>
+
+                <span>
+                    Guarujá - SP
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
