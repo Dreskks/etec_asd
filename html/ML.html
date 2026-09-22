@@ -1,0 +1,1012 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Libertà | Etec Alberto Santos Dumont</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #242424;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+        }
+
+        :root {
+            --grena: #651c32;
+            --grena-escuro: #3d0f1e;
+            --dourado: #d4af37;
+            --dourado-claro: #ead477;
+            --creme: #f7f3e8;
+            --preto: #111111;
+            --branco: #ffffff;
+        }
+
+        .top-bar {
+            background: var(--grena-escuro);
+            color: white;
+            font-size: 13px;
+        }
+
+        .top-content {
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top-social {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-social a {
+            transition: .3s;
+        }
+
+        .top-social a:hover {
+            color: var(--dourado-claro);
+        }
+
+        .header {
+            height: 82px;
+            background: white;
+            border-bottom: 1px solid #eeeeee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: var(--grena);
+        }
+
+        nav {
+            display: flex;
+            gap: 27px;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: var(--grena);
+        }
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    rgba(45, 5, 18, .84),
+                    rgba(45, 5, 18, .62)
+                ),
+                url("../Imagem/ML Libertar.jpg");
+            background-size: cover;
+            background-position: center;
+            border-bottom: 6px solid var(--dourado);
+        }
+
+        .hero-content {
+            color: white;
+        }
+
+        .hero-content span {
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: var(--dourado-claro);
+            font-weight: bold;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(60px, 9vw, 105px);
+            line-height: 1;
+            margin: 15px 0;
+            letter-spacing: -3px;
+        }
+
+        .hero-content p {
+            max-width: 680px;
+            font-size: 19px;
+            color: #eeeeee;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--grena);
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-top: 5px;
+            color: var(--grena);
+        }
+
+        .curso {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .curso img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: .4s;
+        }
+
+        .curso img:hover {
+            transform: scale(1.02);
+        }
+
+        .curso-texto h3 {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: var(--grena);
+        }
+
+        .curso-texto p {
+            font-size: 17px;
+            color: #444;
+            margin-bottom: 16px;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 28px;
+            background: var(--grena);
+            color: white;
+            font-weight: bold;
+            border-left: 4px solid var(--dourado);
+            transition: .3s;
+        }
+
+        .botao:hover {
+            background: var(--grena-escuro);
+            transform: translateY(-3px);
+        }
+
+        .identidade {
+            background: var(--creme);
+            border-top: 1px solid #eee3c9;
+            border-bottom: 1px solid #eee3c9;
+        }
+
+        .identidade-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .cores {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .cor {
+            width: 135px;
+            height: 135px;
+            border-radius: 50%;
+            border: 7px solid white;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .15);
+        }
+
+        .cor-grena {
+            background: var(--grena);
+        }
+
+        .cor-dourado {
+            background: var(--dourado);
+        }
+
+        .identidade-texto h3 {
+            font-size: 32px;
+            color: var(--grena);
+            margin-bottom: 18px;
+        }
+
+        .identidade-texto p {
+            font-size: 17px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .liberta {
+            background: white;
+        }
+
+        .liberta-box {
+            padding: 50px;
+            background: #fafafa;
+            border-left: 7px solid var(--dourado);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .07);
+        }
+
+        .liberta-box h3 {
+            font-size: 50px;
+            letter-spacing: 5px;
+            color: var(--grena);
+            margin-bottom: 15px;
+        }
+
+        .liberta-box p {
+            font-size: 18px;
+            color: #444;
+            max-width: 900px;
+        }
+
+        .mascote {
+            background: var(--grena-escuro);
+            color: white;
+        }
+
+        .mascote .section-title span {
+            color: var(--dourado-claro);
+        }
+
+        .mascote .section-title h2 {
+            color: white;
+        }
+
+        .mascote-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .mascote-grid img {
+            width: 100%;
+            max-height: 480px;
+            object-fit: contain;
+        }
+
+        .mascote-texto h3 {
+            font-size: 52px;
+            color: var(--dourado);
+            margin-bottom: 20px;
+        }
+
+        .mascote-texto p {
+            font-size: 17px;
+            color: #eeeeee;
+            margin-bottom: 18px;
+        }
+
+        .frase {
+            font-size: 23px !important;
+            font-weight: bold;
+            color: var(--dourado-claro) !important;
+            margin-top: 30px;
+            letter-spacing: 2px;
+        }
+
+        .grito {
+            background: var(--grena-escuro);
+            color: white;
+            border-top: 1px solid #5b1b2f;
+        }
+
+        .grito .section-title span {
+            color: var(--dourado);
+        }
+
+        .grito .section-title h2 {
+            color: white;
+        }
+
+        .grito-intro {
+            border-left: 5px solid var(--dourado);
+            padding-left: 20px;
+            margin-bottom: 40px;
+        }
+
+        .grito-intro h3 {
+            color: var(--dourado);
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .grito-intro p {
+            color: #eeeeee;
+            font-size: 17px;
+        }
+
+        .grito-bloco {
+            background: var(--grena);
+            padding: 40px;
+            margin-bottom: 25px;
+            border-left: 6px solid var(--dourado);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+            transition: .3s;
+        }
+
+        .grito-bloco:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .4);
+        }
+
+        .grito-bloco p {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .grito-coro {
+            margin-top: 28px;
+            padding: 28px;
+            text-align: center;
+            background: var(--grena-escuro);
+            color: var(--dourado);
+            font-size: 24px;
+            border-top: 2px solid var(--dourado);
+            border-bottom: 2px solid var(--dourado);
+        }
+
+        .grito-coro strong {
+            color: var(--dourado);
+        }
+
+        .grito-especial {
+            background: var(--dourado);
+            color: var(--grena-escuro);
+            border-left: 6px solid white;
+        }
+
+        .grito-especial p {
+            color: var(--grena-escuro);
+        }
+
+        .grito-especial .grito-coro {
+            background: var(--grena-escuro);
+            border-color: var(--grena-escuro);
+            color: var(--dourado);
+        }
+
+        .grito-final {
+            margin-top: 45px;
+            padding: 60px 30px;
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                var(--grena),
+                var(--grena-escuro)
+            );
+            border-top: 7px solid var(--dourado);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .4);
+        }
+
+        .grito-final h3 {
+            color: var(--dourado-claro);
+            font-size: 44px;
+            margin-bottom: 10px;
+        }
+
+        .grito-final p {
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .grito-final span {
+            display: block;
+            margin: 15px 0;
+            color: var(--dourado);
+            font-size: 18px;
+        }
+
+        .grito-final strong {
+            display: block;
+            color: var(--dourado);
+            font-size: 42px;
+            letter-spacing: 6px;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .area-card {
+            padding: 30px;
+            border: 1px solid #ddd;
+            background: white;
+            transition: .3s;
+        }
+
+        .area-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--dourado);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .1);
+        }
+
+        .area-card h3 {
+            font-size: 35px;
+        }
+
+        .area-card h4 {
+            font-size: 20px;
+            color: var(--grena);
+            margin: 15px 0 10px;
+        }
+
+        .area-card p {
+            color: #555;
+        }
+
+        .instagram {
+            padding: 100px 20px;
+            background: linear-gradient(
+                135deg,
+                var(--grena-escuro),
+                var(--grena)
+            );
+            color: white;
+            text-align: center;
+            border-top: 5px solid var(--dourado);
+        }
+
+        .instagram h2 {
+            font-size: 40px;
+        }
+
+        .instagram p {
+            margin-top: 10px;
+            color: #eeeeee;
+        }
+
+        .instagram .botao {
+            background: var(--dourado);
+            color: var(--grena-escuro);
+            border: none;
+        }
+
+        .instagram .botao:hover {
+            background: var(--dourado-claro);
+        }
+
+        footer {
+            background: #0c0c0c;
+            color: white;
+            text-align: center;
+            padding: 38px 20px;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 4px;
+        }
+
+        @media (max-width: 850px) {
+            nav {
+                display: none;
+            }
+
+            .curso,
+            .identidade-box,
+            .mascote-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cor {
+                width: 90px;
+                height: 90px;
+            }
+
+            .liberta-box {
+                padding: 30px 22px;
+            }
+
+            .grito-bloco {
+                padding: 28px 20px;
+            }
+
+            .grito-final h3 {
+                font-size: 32px;
+            }
+
+            .grito-final p {
+                font-size: 19px;
+            }
+
+            .grito-final strong {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="container top-content">
+            <span>Etec Alberto Santos Dumont</span>
+
+            <div class="top-social">
+                <a href="../html/index.html">Início</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container nav-container">
+
+            <a href="../html/index.html.html">
+    <img src="../Imagem/LOGO ML.png" alt="MI" style="height: 90px; width: auto;">
+            </a>
+
+            <nav>
+                <a href="#sobre">Sobre</a>
+                <a href="#identidade">Identidade</a>
+                <a href="#liberta">Libertà</a>
+                <a href="#mascote">Vikings</a>
+                <a href="#grito">Grito</a>
+                <a href="#atuacao">Atuação</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <span>TÉCNICO EM LOGÍSTICA</span>
+
+            <h1>ML LIBERTÀ</h1>
+
+            <p>
+                Estratégia, organização e determinação para conectar
+                caminhos, superar desafios e conquistar novos destinos.
+            </p>
+        </div>
+    </section>
+
+    <section class="section" id="sobre">
+        <div class="container">
+
+            <div class="section-title">
+                <span>CONHEÇA O ML</span>
+                <h2>Técnico em Logística</h2>
+            </div>
+
+            <div class="curso">
+
+                <div>
+                    <img src="../Imagem/ML Vikings.png" alt="ML Libertà">
+                </div>
+
+                <div class="curso-texto">
+                    <h3>Conectando caminhos e conquistando destinos</h3>
+
+                    <p>
+                        O curso Técnico em Logística prepara profissionais
+                        para planejar, organizar e controlar processos
+                        relacionados ao transporte, armazenamento,
+                        estoque e distribuição.
+                    </p>
+
+                    <p>
+                        Durante a formação, os alunos desenvolvem
+                        conhecimentos sobre gestão de estoques,
+                        movimentação de materiais, transporte,
+                        compras e cadeia de suprimentos.
+                    </p>
+
+                    <p>
+                        A logística está presente em diversos setores
+                        da economia e é fundamental para garantir que
+                        produtos e materiais cheguem ao destino certo,
+                        no momento certo e da maneira mais eficiente.
+                    </p>
+
+                    <a href="#atuacao" class="botao">
+                        Conheça as áreas de atuação
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section identidade" id="identidade">
+        <div class="container">
+
+            <div class="section-title">
+                <span>NOSSA IDENTIDADE</span>
+                <h2>Grená & Dourado</h2>
+            </div>
+
+            <div class="identidade-box">
+
+                <div class="cores">
+                    <div class="cor cor-grena" title="Grená"></div>
+                    <div class="cor cor-dourado" title="Dourado"></div>
+                </div>
+
+                <div class="identidade-texto">
+                    <h3>As cores do ML</h3>
+
+                    <p>
+                        O grená representa força, coragem, intensidade
+                        e determinação. É a cor que expressa a identidade
+                        e a união do ML.
+                    </p>
+
+                    <p>
+                        O dourado representa nobreza, excelência,
+                        conquista e liderança.
+                    </p>
+
+                    <p>
+                        Juntas, as cores representam a força de uma
+                        equipe que busca sempre superar seus limites.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section liberta" id="liberta">
+        <div class="container">
+
+            <div class="section-title">
+                <span>NOSSO LEMA</span>
+                <h2>Libertà</h2>
+            </div>
+
+            <div class="liberta-box">
+                <h3>LIBERTÀ</h3>
+
+                <p>
+                    Libertà representa liberdade, coragem e a capacidade
+                    de seguir em frente mesmo diante dos obstáculos.
+                </p>
+
+                <p style="margin-top:18px;">
+                    Para o ML, Libertà representa a busca por novos
+                    caminhos, a vontade de conquistar e a determinação
+                    para nunca parar de avançar.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section mascote" id="mascote">
+        <div class="container">
+
+            <div class="section-title">
+                <span>NOSSO MASCOTE</span>
+                <h2>Vikings</h2>
+            </div>
+
+            <div class="mascote-grid">
+
+                <div>
+                    <img src="../Imagem/Vikings.png" alt="Vikings - ML">
+                </div>
+
+                <div class="mascote-texto">
+                    <h3>VIKINGS</h3>
+
+                    <p>
+                        Os Vikings representam força, coragem,
+                        estratégia e espírito de equipe.
+                    </p>
+
+                    <p>
+                        Assim como uma tripulação precisa trabalhar
+                        em conjunto para atravessar mares e alcançar
+                        novos territórios, a logística exige
+                        planejamento, organização e união.
+                    </p>
+
+                    <p>
+                        O mascote representa a determinação do ML
+                        para enfrentar desafios, abrir caminhos e
+                        conquistar seus objetivos.
+                    </p>
+
+                    <p class="frase">
+                        FORÇA · CORAGEM · ESTRATÉGIA · LIBERTÀ
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section grito" id="grito">
+        <div class="container">
+
+            <div class="section-title">
+                <span>A VOZ DO ML</span>
+                <h2>Grito de Guerra</h2>
+            </div>
+
+            <div class="grito-intro">
+                <h3>Grito de Guerra – ML</h3>
+
+                <p>
+                    O grito representa a união, o orgulho e a força
+                    dos Vikings. É a voz do ML dentro e fora da Etec.
+                </p>
+            </div>
+
+            <div class="grito-bloco">
+                <p>
+                    O grená é nossa força e o dourado é a nobreza.
+                    <strong>(2x)</strong>
+                </p>
+
+                <p>
+                    São as cores do meu M, que eu amo com certeza.
+                    <strong>(2x)</strong>
+                </p>
+
+                <p>
+                    Cantando com emoção, a gente faz tremer o chão.
+                    <strong>(2x)</strong>
+                </p>
+
+                <p>
+                    Meu lema é Libertà, sou o eterno campeão.
+                    <strong>(2x)</strong>
+                </p>
+
+                <p>
+                    Com garra e com coragem, lutamos até morrer.
+                    <strong>(2x)</strong>
+                </p>
+
+                <p>
+                    Agora presta atenção, que o meu nome vou dizer!
+                    <strong>(2x)</strong>
+                </p>
+
+                <div class="grito-coro">
+                    <strong>
+                        (ML) VIKINGS!<br>
+                        (ML) VIKINGS!<br>
+                        (ML) VIKINGS!
+                    </strong>
+                </div>
+            </div>
+
+            <div class="grito-bloco grito-especial">
+                <p>
+                    <strong>(Pelo ML, nada?)</strong><br>
+                    Tudo!
+                </p>
+
+                <p>
+                    <strong>(Pelo ML, nada?)</strong><br>
+                    Tudo!
+                </p>
+
+                <p>
+                    <strong>
+                        (Então como é, como vai ser e pra sempre será?)
+                    </strong>
+                </p>
+
+                <div class="grito-coro">
+                    <strong>
+                        Cazá, cazá!<br>
+                        Cazá, cazá, cazá!
+                    </strong>
+
+                    <p>
+                        Sempre pronto pra luta, meu lema é Libertà!
+                    </p>
+
+                    <strong>
+                        VIKINGS, VIKINGS, VIKINGS!
+                    </strong>
+                </div>
+            </div>
+
+            <div class="grito-bloco">
+                <p>
+                    Com o grená no corpo,<br>
+                    minhas armas na mão.
+                </p>
+
+                <p>
+                    A ETEC é nossa,<br>
+                    acabou a sua festa!
+                </p>
+
+                <p>
+                    Conquistando respeito,<br>
+                    meu M vai brilhar!
+                </p>
+
+                <p>
+                    O raio vai cair,<br>
+                    sempre no mesmo lugar!
+                </p>
+
+                <div class="grito-coro">
+                    <strong>
+                        Daje, daje, daje, oh!<br>
+                        Daje, daje, daje, oh!<br>
+                        Daje, daje, daje, oh!<br><br>
+                        ML CAMPEÃO!
+                    </strong>
+                </div>
+            </div>
+
+            <div class="grito-bloco">
+                <div class="grito-coro">
+                    <strong>
+                        SOU ML!<br>
+                        SEMPRE VOU SER!<br>
+                        PELO MEU M, EU VOU CORRER!
+                    </strong>
+                </div>
+
+                <p style="margin-top: 25px;">
+                    NÓS CHEGAMOS<br>
+                    PRA DOMINAR,<br>
+                    E NOSSAS GLÓRIAS CONQUISTAR!
+                </p>
+            </div>
+
+            <div class="grito-final">
+                <h3>OLÊ LÊ, OLÁ LÁ!</h3>
+
+                <p>
+                    ML VEM AÍ, E CHEGOU PRA DOMINAR!
+                </p>
+
+                <span>(3x)</span>
+
+                <strong>VIKINGS!</strong>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section" id="atuacao">
+        <div class="container">
+
+            <div class="section-title">
+                <span>FUTURO PROFISSIONAL</span>
+                <h2>Onde você pode atuar</h2>
+            </div>
+
+            <div class="areas-grid">
+
+                <div class="area-card">
+                    <h3>🚚</h3>
+                    <h4>Transporte</h4>
+                    <p>
+                        Planejamento e organização da movimentação
+                        de produtos e mercadorias.
+                    </p>
+                </div>
+
+                <div class="area-card">
+                    <h3>📦</h3>
+                    <h4>Estoque</h4>
+                    <p>
+                        Controle e gerenciamento de materiais,
+                        produtos e inventários.
+                    </p>
+                </div>
+
+                <div class="area-card">
+                    <h3>🏭</h3>
+                    <h4>Armazenagem</h4>
+                    <p>
+                        Organização dos espaços e processos
+                        de armazenamento.
+                    </p>
+                </div>
+
+                <div class="area-card">
+                    <h3>🌎</h3>
+                    <h4>Supply Chain</h4>
+                    <p>
+                        Gestão da cadeia de suprimentos,
+                        distribuição e operações.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="instagram">
+        <div class="container">
+
+            <h2>Acompanhe o ML</h2>
+
+            <p>
+                Conheça os projetos, eventos e momentos
+                da turma.
+            </p>
+
+            <a href="#" target="_blank" class="botao">
+                Instagram do ML
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Etec Alberto Santos Dumont</p>
+        <p>ML Libertà | Técnico em Logística</p>
+    </footer>
+
+</body>
+
+</html>
+

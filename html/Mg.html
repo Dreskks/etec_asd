@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MG Ostende | Guia de Turismo</title>
+
+    <!-- ÍCONES -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           CONFIGURAÇÕES GERAIS
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #181818;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .mg-container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        .mg-header {
+            height: 82px;
+            background: #ffffff;
+            border-bottom: 1px solid #eeeeee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .mg-header .mg-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mg-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .mg-logo > span {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #f2c400;
+            color: #111111;
+
+            font-weight: 900;
+            font-size: 16px;
+        }
+
+        .mg-logo strong {
+            display: block;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .mg-logo small {
+            color: #777777;
+            font-size: 11px;
+        }
+
+        .mg-header nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .mg-header nav a {
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .mg-header nav a:hover {
+            color: #c49e00;
+        }
+
+        .mg-instagram {
+            padding: 11px 17px;
+            background: #181818;
+            color: #ffffff !important;
+        }
+
+        .mg-instagram:hover {
+            background: #f2c400;
+            color: #111111 !important;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .mg-hero {
+            min-height: 620px;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    115deg,
+                    #101010 0%,
+                    #181818 55%,
+                    #d4ac00 160%
+                );
+
+            color: #ffffff;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+        .mg-hero::before {
+            content: "MG";
+
+            position: absolute;
+
+            right: -40px;
+            bottom: -130px;
+
+            font-size: 420px;
+
+            font-weight: 900;
+
+            color: rgba(242, 196, 0, .07);
+        }
+
+        .mg-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 400px;
+            height: 400px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(242,196,0,.15);
+
+            right: 100px;
+            top: 80px;
+        }
+
+        .mg-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .mg-label {
+            color: #f2c400;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+        }
+
+        .mg-hero h1 {
+            font-size: clamp(55px, 8vw, 100px);
+
+            line-height: .9;
+
+            margin: 20px 0;
+        }
+
+        .mg-hero h1 strong {
+            display: block;
+            color: #f2c400;
+        }
+
+        .mg-hero p {
+            max-width: 650px;
+
+            color: #cccccc;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+        .mg-buttons {
+            display: flex;
+
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+        .mg-btn,
+        .mg-btn-outline {
+            padding: 14px 22px;
+
+            font-weight: bold;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            transition: .3s;
+        }
+
+        .mg-btn {
+            background: #f2c400;
+            color: #111111;
+        }
+
+        .mg-btn:hover {
+            background: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .mg-btn-outline {
+            border: 1px solid #555555;
+            color: #ffffff;
+        }
+
+        .mg-btn-outline:hover {
+            border-color: #f2c400;
+            color: #f2c400;
+        }
+
+
+        /* =====================================================
+           IDENTIDADE
+        ====================================================== */
+
+        .mg-identity {
+            padding: 80px 0;
+
+            background: #f6f6f6;
+        }
+
+        .identity-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .identity-card {
+            background: #ffffff;
+
+            padding: 35px;
+
+            border-bottom: 4px solid #f2c400;
+
+            transition: .3s;
+        }
+
+        .identity-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 18px 40px rgba(0,0,0,.09);
+        }
+
+        .identity-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #f2c400;
+
+            font-size: 22px;
+
+            margin-bottom: 20px;
+        }
+
+        .identity-card span {
+            color: #888888;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            font-weight: bold;
+        }
+
+        .identity-card h3 {
+            font-size: 26px;
+
+            margin: 8px 0;
+        }
+
+        .identity-card p {
+            color: #666666;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           SOBRE O CURSO
+        ====================================================== */
+
+        .mg-about {
+            padding: 100px 0;
+        }
+
+        .mg-about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .mg-about-image {
+            height: 500px;
+
+            overflow: hidden;
+
+            background: #eeeeee;
+        }
+
+        .mg-about-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+        .mg-about-image:hover img {
+            transform: scale(1.04);
+        }
+
+        .mg-label-dark {
+            color: #b18e00;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+        }
+
+        .mg-about-content h2 {
+            font-size: 52px;
+
+            line-height: 1;
+
+            margin: 15px 0 25px;
+        }
+
+        .mg-about-content h2 strong {
+            color: #d2a900;
+        }
+
+        .mg-about-content p {
+            color: #555555;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+        .mg-course-info {
+            display: flex;
+
+            gap: 35px;
+
+            margin-top: 35px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #dddddd;
+        }
+
+        .mg-course-info strong {
+            display: block;
+
+            font-size: 20px;
+        }
+
+        .mg-course-info span {
+            color: #777777;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           MASCOTE
+        ====================================================== */
+
+        .mg-mascot {
+            background: #181818;
+
+            color: #ffffff;
+
+            padding: 100px 0;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .mg-mascot::before {
+            content: "PEGASUS";
+
+            position: absolute;
+
+            right: -70px;
+            bottom: -50px;
+
+            font-size: 120px;
+
+            font-weight: 900;
+
+            color: rgba(255,255,255,.025);
+        }
+
+        .mascot-content {
+            display: grid;
+
+            grid-template-columns: 1fr 320px;
+
+            align-items: center;
+
+            gap: 80px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .mg-mascot h2 {
+            font-size: 58px;
+
+            line-height: 1;
+
+            margin: 15px 0;
+        }
+
+        .mg-mascot h2 strong {
+            color: #f2c400;
+        }
+
+        .mg-mascot p {
+            max-width: 650px;
+
+            color: #bbbbbb;
+
+            line-height: 1.8;
+        }
+
+        .pegasus {
+            width: 260px;
+            height: 260px;
+
+            border-radius: 50%;
+
+            background: #f2c400;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 100px;
+
+            color: #181818;
+
+            margin: auto;
+
+            box-shadow:
+                0 0 0 15px rgba(242,196,0,.08),
+                0 0 60px rgba(242,196,0,.12);
+        }
+
+
+        /* =====================================================
+           GRITO DO MG
+        ====================================================== */
+
+        .mg-grito {
+            padding: 100px 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #f7f7f7
+                );
+        }
+
+        .grito-header {
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: 0 auto 45px;
+        }
+
+        .grito-header span {
+            color: #b18e00;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+        }
+
+        .grito-header h2 {
+            font-size: 52px;
+
+            margin: 10px 0;
+        }
+
+        .grito-header h2 strong {
+            color: #d2a900;
+        }
+
+        .grito-header p {
+            color: #777777;
+        }
+
+        .grito-box {
+            max-width: 850px;
+
+            margin: auto;
+
+            background: #181818;
+
+            color: #ffffff;
+
+            padding: 55px 60px;
+
+            border-top: 6px solid #f2c400;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.15);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .grito-box::after {
+            content: "MG";
+
+            position: absolute;
+
+            right: -30px;
+            bottom: -100px;
+
+            font-size: 300px;
+
+            font-weight: 900;
+
+            color: rgba(242,196,0,.05);
+        }
+
+        .grito-content {
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .grito-line {
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            margin-bottom: 7px;
+        }
+
+        .grito-line strong {
+            color: #f2c400;
+        }
+
+        .grito-space {
+            height: 18px;
+        }
+
+        .grito-applause {
+            color: #f2c400;
+
+            font-size: 18px;
+
+            letter-spacing: 5px;
+
+            margin: 4px 0;
+        }
+
+        .grito-final {
+            margin-top: 30px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #444444;
+
+            text-align: center;
+
+            color: #f2c400;
+
+            font-size: 24px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =====================================================
+           INSTAGRAM
+        ====================================================== */
+
+        .mg-social {
+            padding: 90px 0;
+
+            text-align: center;
+
+            background: #f6f6f6;
+        }
+
+        .mg-social > .mg-container > span {
+            color: #b18e00;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+        }
+
+        .mg-social h2 {
+            font-size: 45px;
+
+            margin: 12px 0;
+        }
+
+        .mg-social h2 strong {
+            color: #d2a900;
+        }
+
+        .mg-social p {
+            color: #666666;
+
+            margin-bottom: 25px;
+        }
+
+        .mg-social a {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            background: #181818;
+
+            color: #ffffff;
+
+            padding: 14px 22px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .mg-social a:hover {
+            background: #f2c400;
+
+            color: #111111;
+        }
+
+
+        /* =====================================================
+           VOLTAR PARA ETEC
+        ====================================================== */
+
+        .mg-back {
+            padding: 35px 0;
+
+            background: #ffffff;
+
+            text-align: center;
+
+            border-top: 1px solid #eeeeee;
+        }
+
+        .mg-back a {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #333333;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            transition: .3s;
+        }
+
+        .mg-back a:hover {
+            color: #c49e00;
+
+            transform: translateX(-4px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .mg-footer {
+            background: #111111;
+
+            color: #ffffff;
+
+            padding: 35px 0;
+        }
+
+        .mg-footer .mg-container {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .mg-footer strong {
+            color: #f2c400;
+
+            letter-spacing: 2px;
+        }
+
+        .mg-footer span {
+            color: #999999;
+
+            font-size: 13px;
+        }
+
+        .mg-footer a {
+            font-size: 13px;
+
+            color: #bbbbbb;
+        }
+
+        .mg-footer a:hover {
+            color: #f2c400;
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ====================================================== */
+
+        @media (max-width: 800px) {
+
+            .mg-header {
+                height: 70px;
+            }
+
+            .mg-header nav {
+                display: none;
+            }
+
+            .identity-grid,
+            .mg-about-grid,
+            .mascot-content {
+                grid-template-columns: 1fr;
+            }
+
+            .mg-about-image {
+                height: 350px;
+            }
+
+            .mg-hero {
+                min-height: 550px;
+            }
+
+            .mg-hero h1 {
+                font-size: 65px;
+            }
+
+            .mg-about-content h2,
+            .mg-mascot h2,
+            .grito-header h2 {
+                font-size: 40px;
+            }
+
+            .grito-box {
+                padding: 40px 25px;
+            }
+
+            .mg-footer .mg-container {
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .mg-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .mg-course-info {
+                flex-wrap: wrap;
+            }
+
+            .grito-line {
+                font-size: 15px;
+            }
+
+            .pegasus {
+                width: 210px;
+                height: 210px;
+
+                font-size: 75px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="mg-header">
+
+        <div class="mg-container">
+
+            <a href="../html/index.html.html">
+    <img src="../Imagem/LOGO MG.png" alt="MI" style="height: 60px; width: auto;">
+
+                
+            <nav>
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="../html/index.html">
+                    A Etec
+                </a>
+
+                <a href="cursos.html">
+                    Cursos
+                </a>
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#grito">
+                    Grito
+                </a>
+
+                <a
+                    href="https://www.instagram.com/mg.ostende/"
+                    target="_blank"
+                    class="mg-instagram">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    Instagram
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="mg-hero">
+
+        <div class="mg-container mg-hero-content">
+
+            <span class="mg-label">
+                ETEC ALBERTO SANTOS DUMONT
+            </span>
+
+
+            <h1>
+
+                Guia de
+
+                <strong>Turismo</strong>
+
+            </h1>
+
+
+            <p>
+
+                Conheça o MG Ostende, o M que transforma
+                conhecimento, cultura e experiências em
+                caminhos para explorar o mundo.
+
+            </p>
+
+
+            <div class="mg-buttons">
+
+                <a
+                    href="#sobre"
+                    class="mg-btn">
+
+                    Conheça o MG
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                </a>
+
+
+                <a
+                    href="#grito"
+                    class="mg-btn-outline">
+
+                    <i class="fa-solid fa-volume-high"></i>
+
+                    Conheça nosso grito
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         IDENTIDADE
+    ====================================================== -->
+
+    <section class="mg-identity">
+
+        <div class="mg-container">
+
+            <div class="identity-grid">
+
+
+                <!-- CORES -->
+
+                <div class="identity-card">
+
+                    <div class="identity-icon">
+
+                        <i class="fa-solid fa-palette"></i>
+
+                    </div>
+
+                    <span>CORES</span>
+
+                    <h3>
+                        Amarelo, Preto e Branco
+                    </h3>
+
+                    <p>
+                        As cores que representam a identidade,
+                        força e presença do MG dentro da Etec.
+                    </p>
+
+                </div>
+
+
+                <!-- MASCOTE -->
+
+                <div class="identity-card">
+
+                    <div class="identity-icon">
+
+                        <i class="fa-solid fa-horse"></i>
+
+                    </div>
+
+                    <span>MASCOTE</span>
+
+                    <h3>
+                        Pegasus
+                    </h3>
+
+                    <p>
+                        Representa liberdade, força e a busca
+                        por novos horizontes e destinos.
+                    </p>
+
+                </div>
+
+
+                <!-- LEMA -->
+
+                <div class="identity-card">
+
+                    <div class="identity-icon">
+
+                        <i class="fa-solid fa-crown"></i>
+
+                    </div>
+
+                    <span>LEMA</span>
+
+                    <h3>
+                        Ostende
+                    </h3>
+
+                    <p>
+                        Uma identidade que representa o espírito
+                        e a determinação do MG.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOBRE O CURSO
+    ====================================================== -->
+
+    <section class="mg-about" id="sobre">
+
+        <div class="mg-container mg-about-grid">
+
+
+            <div class="mg-about-image">
+
+                <!--
+                    COLOQUE A IMAGEM DO MG AQUI
+
+                    Exemplo:
+                    ../Imagem/mg ostendes.png
+                -->
+
+                <img
+                    src="../Imagem/mg ostendes.png"
+                    alt="MG Ostende">
+
+            </div>
+
+
+            <div class="mg-about-content">
+
+                <span class="mg-label-dark">
+                    SOBRE O CURSO
+                </span>
+
+
+                <h2>
+
+                    Explore novos
+
+                    <strong>destinos</strong>
+
+                </h2>
+
+
+                <p>
+
+                    O curso Técnico em Guia de Turismo prepara
+                    profissionais para planejar, organizar e
+                    acompanhar roteiros turísticos, apresentando
+                    destinos, culturas e histórias aos visitantes.
+
+                </p>
+
+
+                <p>
+
+                    No MG, o aprendizado envolve comunicação,
+                    cultura, patrimônio, turismo e experiências
+                    que conectam pessoas a diferentes lugares.
+
+                </p>
+
+
+                <div class="mg-course-info">
+
+                    <div>
+
+                        <strong>MG</strong>
+
+                        <span>Identidade</span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>Guia</strong>
+
+                        <span>Profissão</span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>Ostende</strong>
+
+                        <span>Lema</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MASCOTE
+    ====================================================== -->
+
+    <section class="mg-mascot">
+
+        <div class="mg-container mascot-content">
+
+
+            <div>
+
+                <span class="mg-label">
+                    O MASCOTE
+                </span>
+
+
+                <h2>
+
+                    Asas para
+
+                    <strong>explorar</strong>
+
+                </h2>
+
+
+                <p>
+
+                    O Pegasus representa o espírito do MG:
+                    liberdade para descobrir novos lugares,
+                    coragem para seguir novos caminhos e
+                    determinação para alcançar novos destinos.
+
+                </p>
+
+            </div>
+
+
+            <div class="pegasus">
+
+                <i class="fa-solid fa-horse"></i>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GRITO DO MG
+    ====================================================== -->
+
+    <section class="mg-grito" id="grito">
+
+        <div class="mg-container">
+
+
+            <div class="grito-header">
+
+                <span>
+                    IDENTIDADE • UNIÃO • TRADIÇÃO
+                </span>
+
+                <h2>
+                    Grito do <strong>MG</strong>
+                </h2>
+
+                <p>
+                    A voz do MG Ostende dentro da Integração.
+                </p>
+
+            </div>
+
+
+            <div class="grito-box">
+
+                <div class="grito-content">
+
+
+                    <div class="grito-line">
+                        <strong>Vou ensinar uma coisa muito fácil de fazer!</strong>
+                    </div>
+
+                    <div class="grito-line">
+                        <strong>Vou ensinar uma coisa muito fácil de fazer!</strong>
+                    </div>
+
+
+                    <div class="grito-space"></div>
+
+
+                    <div class="grito-line">
+                        É só duas no peito, uma na mão você vai ver!
+                    </div>
+
+                    <div class="grito-line">
+                        É só duas no peito, uma na mão você vai ver!
+                    </div>
+
+
+                    <div class="grito-applause">
+                        👏👏
+                    </div>
+
+
+                    <div class="grito-space"></div>
+
+
+                    <div class="grito-line">
+                        <strong>O meu M é forte!</strong>
+                    </div>
+
+                    <div class="grito-line">
+                        <strong>O meu M é forte!</strong>
+                    </div>
+
+
+                    <div class="grito-line">
+                        Sempre campeão!
+                    </div>
+
+                    <div class="grito-line">
+                        Sempre campeão!
+                    </div>
+
+
+                    <div class="grito-space"></div>
+
+
+                    <div class="grito-line">
+                        Mas que M é esse que vibra o tempo inteiro?
+                    </div>
+
+                    <div class="grito-line">
+                        Mas que M é esse que vibra o tempo inteiro?
+                    </div>
+
+
+                    <div class="grito-line">
+                        <strong>É o Pegasus entrando em ação!</strong>
+                    </div>
+
+                    <div class="grito-line">
+                        <strong>É o Pegasus entrando em ação!</strong>
+                    </div>
+
+
+                    <div class="grito-space"></div>
+
+
+                    <div class="grito-line">
+                        Ganhando ou perdendo
+                    </div>
+
+                    <div class="grito-line">
+                        Não se abala não!
+                    </div>
+
+                    <div class="grito-line">
+                        Porque o MG será sempre campeão!
+                    </div>
+
+                    <div class="grito-line">
+                        Porque o MG será sempre campeão!
+                    </div>
+
+
+                    <div class="grito-space"></div>
+
+
+                    <div class="grito-line">
+                        <strong>Uh é MG!</strong>
+                    </div>
+
+                    <div class="grito-line">
+                        Uh uh é MG!
+                    </div>
+
+                    <div class="grito-line">
+                        <strong>Uh é MG!</strong>
+                    </div>
+
+                    <div class="grito-line">
+                        Botando pra ferver!
+                    </div>
+
+                    <div class="grito-line">
+                        Botando pra ferver!
+                    </div>
+
+
+                    <div class="grito-space"></div>
+
+
+                    <div class="grito-line">
+                        Chegamos pra invadir!
+                    </div>
+
+
+                    <div class="grito-applause">
+                        👏👏
+                    </div>
+
+
+                    <div class="grito-line">
+                        A Etec balança com o que dizem por aí!
+                    </div>
+
+                    <div class="grito-line">
+                        Dizem por aí que o MG é campeão!
+                    </div>
+
+                    <div class="grito-line">
+                        Contra todos os rivais,
+                    </div>
+
+                    <div class="grito-line">
+                        Pra ganhar a Integração!
+                    </div>
+
+
+                    <div class="grito-space"></div>
+
+
+                    <div class="grito-line">
+                        <strong>Amarelo, preto e branco!</strong>
+                    </div>
+
+                    <div class="grito-line">
+                        As cores do terror!
+                    </div>
+
+                    <div class="grito-line">
+                        Os M's já entenderam:
+                    </div>
+
+                    <div class="grito-line">
+                        <strong>Que o MG é vencedor!</strong>
+                    </div>
+
+
+                    <div class="grito-space"></div>
+
+
+                    <div class="grito-final">
+
+                        OLÉ OLÉ<br>
+
+                        EU SOU DO MG ATÉ MORRER!<br>
+
+                        OLÉ OLÉ!
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INSTAGRAM
+    ====================================================== -->
+
+    <section class="mg-social">
+
+        <div class="mg-container">
+
+            <span>
+                ACOMPANHE O MG
+            </span>
+
+            <h2>
+                Siga o <strong>MG Ostende</strong>
+            </h2>
+
+            <p>
+                Confira projetos, atividades e novidades
+                do curso de Guia de Turismo.
+            </p>
+
+
+            <a
+                href="https://www.instagram.com/mg.ostende/"
+                target="_blank">
+
+                <i class="fa-brands fa-instagram"></i>
+
+                @mg.ostende
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         VOLTAR PARA A ETEC
+    ====================================================== -->
+
+    <section class="mg-back">
+
+        <div class="mg-container">
+
+            <a href="cursos.html">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Voltar para os cursos
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="mg-footer">
+
+        <div class="mg-container">
+
+            <strong>
+                MG OSTENDE
+            </strong>
+
+            <span>
+                Técnico em Guia de Turismo
+            </span>
+
+            <a href="../html/index.html">
+
+                ← Voltar para a Etec
+
+            </a>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1578 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ME Temeritas | Técnico em Eventos</title>
+
+
+    <!-- =====================================================
+         ÍCONES
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         CSS
+         TODO O CSS ESTÁ DENTRO DESTE ARQUIVO
+    ====================================================== -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #faf9fc;
+            color: #202020;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .me-container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        .me-header {
+            height: 82px;
+            background: #ffffff;
+            border-bottom: 1px solid #e8e3ed;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .me-header .me-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        /* LOGO */
+
+        .me-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .me-logo-mark {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #6817a8;
+            color: #ffffff;
+
+            font-size: 18px;
+            font-weight: 900;
+
+            transform: rotate(-5deg);
+        }
+
+        .me-logo strong {
+            display: block;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .me-logo small {
+            display: block;
+            color: #777777;
+            font-size: 11px;
+        }
+
+
+        /* MENU */
+
+        .me-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .me-nav a {
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .me-nav a:hover {
+            color: #6817a8;
+        }
+
+
+        /* INSTAGRAM */
+
+        .me-instagram {
+            padding: 11px 18px;
+            background: #6817a8;
+            color: #ffffff !important;
+        }
+
+        .me-instagram:hover {
+            background: #4d087f;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .me-hero {
+            min-height: 650px;
+
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+
+            color: #ffffff;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(180, 74, 255, .45),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #160022,
+                    #39055b 50%,
+                    #6817a8
+                );
+        }
+
+
+        /* CÍRCULOS DECORATIVOS */
+
+        .me-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border: 1px solid rgba(255,255,255,.12);
+
+            border-radius: 50%;
+
+            right: -100px;
+            top: -80px;
+        }
+
+        .me-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border: 1px solid rgba(255,255,255,.1);
+
+            border-radius: 50%;
+
+            right: 40px;
+            top: 35px;
+        }
+
+
+        .me-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .me-tag {
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            border: 1px solid rgba(255,255,255,.3);
+
+            font-size: 11px;
+            letter-spacing: 4px;
+            font-weight: bold;
+
+            margin-bottom: 25px;
+        }
+
+
+        .me-hero h1 {
+            max-width: 850px;
+
+            font-size: clamp(55px, 8vw, 105px);
+
+            line-height: .9;
+
+            text-transform: uppercase;
+
+            margin-bottom: 30px;
+        }
+
+        .me-hero h1 span {
+            display: block;
+            color: #d28cff;
+        }
+
+
+        .me-hero p {
+            max-width: 620px;
+
+            color: #ddd0e5;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* BOTÕES */
+
+        .me-buttons {
+            display: flex;
+            gap: 14px;
+            margin-top: 35px;
+        }
+
+        .me-btn,
+        .me-btn-outline {
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 14px 22px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .me-btn {
+            background: #ffffff;
+            color: #42105e;
+        }
+
+        .me-btn:hover {
+            background: #d28cff;
+            color: #ffffff;
+        }
+
+        .me-btn-outline {
+            border: 1px solid rgba(255,255,255,.4);
+            color: #ffffff;
+        }
+
+        .me-btn-outline:hover {
+            border-color: #ffffff;
+            background: rgba(255,255,255,.08);
+        }
+
+
+        /* =====================================================
+           IDENTIDADE
+        ====================================================== */
+
+        .me-identity {
+            margin-top: -45px;
+
+            position: relative;
+            z-index: 10;
+        }
+
+        .me-identity-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .me-identity-card {
+
+            background: #ffffff;
+
+            padding: 32px;
+
+            border-top: 4px solid #6817a8;
+
+            box-shadow:
+                0 15px 35px rgba(40, 10, 60, .1);
+
+            transition: .3s;
+        }
+
+        .me-identity-card:hover {
+            transform: translateY(-7px);
+        }
+
+
+        .me-icon {
+
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #f0ddfb;
+
+            color: #6817a8;
+
+            font-size: 21px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .me-identity-card span {
+
+            color: #888888;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            font-weight: bold;
+        }
+
+
+        .me-identity-card h3 {
+
+            font-size: 26px;
+
+            margin: 6px 0;
+        }
+
+
+        .me-identity-card p {
+
+            color: #666666;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           SOBRE O CURSO
+        ====================================================== */
+
+        .me-about {
+
+            padding: 110px 0;
+        }
+
+
+        .me-about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 75px;
+
+            align-items: center;
+        }
+
+
+        .me-about-image {
+
+            height: 500px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: #6817a8;
+        }
+
+
+        .me-about-image::after {
+
+            content: "EVENTOS";
+
+            position: absolute;
+
+            left: -15px;
+            bottom: -25px;
+
+            font-size: 85px;
+
+            font-weight: 900;
+
+            color: rgba(255,255,255,.12);
+        }
+
+
+        .me-about-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+
+        .me-about-image:hover img {
+
+            transform: scale(1.05);
+        }
+
+
+        .me-section-label {
+
+            color: #6817a8;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+        }
+
+
+        .me-about-content h2 {
+
+            font-size: 52px;
+
+            line-height: 1;
+
+            margin: 15px 0 25px;
+        }
+
+
+        .me-about-content h2 strong {
+
+            color: #6817a8;
+        }
+
+
+        .me-about-content p {
+
+            color: #555555;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* INFORMAÇÕES */
+
+        .me-course-info {
+
+            display: flex;
+
+            gap: 40px;
+
+            margin-top: 35px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #dddddd;
+        }
+
+
+        .me-course-info strong {
+
+            display: block;
+
+            font-size: 20px;
+
+            color: #6817a8;
+        }
+
+
+        .me-course-info span {
+
+            color: #777777;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           MASCOTE
+        ====================================================== */
+
+        .me-mascot {
+
+            padding: 100px 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #21002f,
+                    #6817a8
+                );
+
+            color: #ffffff;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .me-mascot::before {
+
+            content: "K";
+
+            position: absolute;
+
+            right: 40px;
+            top: -100px;
+
+            font-size: 500px;
+
+            font-weight: 900;
+
+            color: rgba(255,255,255,.04);
+        }
+
+
+        .me-mascot-grid {
+
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 350px;
+
+            align-items: center;
+
+            gap: 80px;
+        }
+
+
+        .me-mascot h2 {
+
+            font-size: 62px;
+
+            line-height: .95;
+
+            margin: 15px 0 25px;
+        }
+
+
+        .me-mascot h2 strong {
+
+            color: #d28cff;
+        }
+
+
+        .me-mascot p {
+
+            max-width: 620px;
+
+            color: #dbcde2;
+
+            line-height: 1.8;
+        }
+
+
+        .kraken {
+
+            width: 280px;
+
+            height: 280px;
+
+            margin: auto;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.08);
+
+            border: 1px solid rgba(255,255,255,.25);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 105px;
+
+            color: #d28cff;
+
+            box-shadow:
+                0 0 70px rgba(210,140,255,.15);
+        }
+
+
+        /* =====================================================
+           GRITO DE GUERRA
+        ====================================================== */
+
+        .me-grito {
+
+            padding: 105px 0;
+
+            background: #f5eff8;
+        }
+
+
+        .me-grito-header {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+
+        .me-grito-header span {
+
+            color: #6817a8;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+        }
+
+
+        .me-grito-header h2 {
+
+            font-size: 52px;
+
+            line-height: 1;
+
+            margin-top: 10px;
+        }
+
+
+        .me-grito-header h2 strong {
+
+            color: #6817a8;
+        }
+
+
+        .me-grito-box {
+
+            max-width: 820px;
+
+            margin: auto;
+
+            background: #ffffff;
+
+            padding: 55px;
+
+            text-align: center;
+
+            border-top: 6px solid #6817a8;
+
+            box-shadow:
+                0 20px 50px rgba(70, 20, 90, .1);
+        }
+
+
+        .me-grito-box p {
+
+            font-size: 18px;
+
+            line-height: 2;
+
+            margin-bottom: 4px;
+
+            color: #333333;
+        }
+
+
+        .me-grito-box .repeat {
+
+            color: #999999;
+
+            font-style: italic;
+
+            font-size: 15px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .me-grito-box .destaque {
+
+            margin: 30px 0;
+
+            color: #6817a8;
+
+            font-size: 28px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+
+        .me-grito-box .kraken-grito {
+
+            margin-top: 30px;
+
+            padding: 25px 0;
+
+            border-top: 1px solid #e1d7e6;
+
+            border-bottom: 1px solid #e1d7e6;
+
+            color: #6817a8;
+
+            font-size: 31px;
+
+            font-weight: 900;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =====================================================
+           INSTAGRAM
+        ====================================================== */
+
+        .me-social {
+
+            padding: 95px 0;
+
+            text-align: center;
+
+            background: #ffffff;
+        }
+
+
+        .me-social-label {
+
+            color: #6817a8;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+        }
+
+
+        .me-social h2 {
+
+            font-size: 48px;
+
+            margin: 12px 0;
+        }
+
+
+        .me-social h2 strong {
+
+            color: #6817a8;
+        }
+
+
+        .me-social p {
+
+            color: #666666;
+
+            margin-bottom: 25px;
+        }
+
+
+        .me-social a {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 23px;
+
+            background: #6817a8;
+
+            color: #ffffff;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+
+        .me-social a:hover {
+
+            background: #42105e;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .me-footer {
+
+            padding: 35px 0;
+
+            background: #16001f;
+
+            color: #ffffff;
+        }
+
+
+        .me-footer .me-container {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .me-footer strong {
+
+            color: #d28cff;
+
+            letter-spacing: 2px;
+        }
+
+
+        .me-footer span {
+
+            color: #999999;
+
+            font-size: 13px;
+        }
+
+
+        .me-footer a {
+
+            font-size: 13px;
+
+            transition: .3s;
+        }
+
+
+        .me-footer a:hover {
+
+            color: #d28cff;
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ====================================================== */
+
+        @media (max-width: 850px) {
+
+            .me-nav {
+                display: none;
+            }
+
+
+            .me-hero {
+                min-height: 570px;
+            }
+
+
+            .me-hero h1 {
+                font-size: 65px;
+            }
+
+
+            .me-identity {
+                margin-top: 0;
+                padding-top: 25px;
+            }
+
+
+            .me-identity-grid,
+            .me-about-grid,
+            .me-mascot-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .me-about-image {
+                height: 350px;
+            }
+
+
+            .me-about-content h2,
+            .me-mascot h2 {
+                font-size: 42px;
+            }
+
+
+            .kraken {
+                width: 220px;
+                height: 220px;
+                font-size: 80px;
+            }
+
+
+            .me-buttons {
+                flex-direction: column;
+                width: fit-content;
+            }
+
+
+            .me-grito-box {
+                padding: 35px 20px;
+            }
+
+
+            .me-grito-header h2 {
+                font-size: 40px;
+            }
+
+
+            .me-footer .me-container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="me-header">
+
+        <div class="me-container">
+
+
+            <a href="../html/index.html.html">
+    <img src="../Imagem/LOGO ME.png" alt="MI" style="height: 60px; width: auto;">
+
+             
+
+            <nav class="me-nav">
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="cursos.html">
+                    Cursos
+                </a>
+
+                <a href="#sobre">
+                    O Curso
+                </a>
+
+                <a href="#grito">
+                    Grito
+                </a>
+
+                <a
+                    href="https://www.instagram.com/temeritas_me/"
+                    target="_blank"
+                    class="me-instagram">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    Instagram
+
+                </a>
+
+            </nav>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="me-hero">
+
+        <div class="me-container me-hero-content">
+
+
+            <span class="me-tag">
+                ETEC ALBERTO SANTOS DUMONT
+            </span>
+
+
+            <h1>
+
+                Técnico em
+
+                <span>
+                    Eventos
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Conheça o ME Temeritas, o curso que transforma
+                criatividade, organização e planejamento em
+                experiências que ficam na memória.
+
+            </p>
+
+
+            <div class="me-buttons">
+
+
+                <a href="#sobre" class="me-btn">
+
+                    Conheça o ME
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/temeritas_me/"
+                    target="_blank"
+                    class="me-btn-outline">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    @temeritas_me
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         IDENTIDADE DO ME
+    ====================================================== -->
+
+    <section class="me-identity">
+
+        <div class="me-container">
+
+
+            <div class="me-identity-grid">
+
+
+                <!-- COR -->
+
+                <div class="me-identity-card">
+
+                    <div class="me-icon">
+
+                        <i class="fa-solid fa-palette"></i>
+
+                    </div>
+
+                    <span>
+                        COR
+                    </span>
+
+                    <h3>
+                        Roxo
+                    </h3>
+
+                    <p>
+                        A cor que representa a identidade
+                        visual do ME Temeritas.
+                    </p>
+
+                </div>
+
+
+                <!-- MASCOTE -->
+
+                <div class="me-identity-card">
+
+                    <div class="me-icon">
+
+                        <i class="fa-solid fa-water"></i>
+
+                    </div>
+
+                    <span>
+                        MASCOTE
+                    </span>
+
+                    <h3>
+                        Kraken
+                    </h3>
+
+                    <p>
+                        A criatura que representa a força
+                        e a presença do Temeritas.
+                    </p>
+
+                </div>
+
+
+                <!-- CURSO -->
+
+                <div class="me-identity-card">
+
+                    <div class="me-icon">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                    </div>
+
+                    <span>
+                        CURSO
+                    </span>
+
+                    <h3>
+                        Eventos
+                    </h3>
+
+                    <p>
+                        Planejamento, organização e realização
+                        de eventos.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOBRE O CURSO
+    ====================================================== -->
+
+    <section class="me-about" id="sobre">
+
+        <div class="me-container me-about-grid">
+
+
+            <div class="me-about-image">
+
+                <!--
+                    IMAGEM DO ME
+
+                    COLOQUE A IMAGEM EM:
+
+                    ../Imagem/ME TEMERITAS.jpeg
+                -->
+
+                <img
+                    src="../Imagem/ME TEMERITAS.jpeg"
+                    alt="ME Temeritas">
+
+            </div>
+
+
+            <div class="me-about-content">
+
+
+                <span class="me-section-label">
+                    SOBRE O CURSO
+                </span>
+
+
+                <h2>
+
+                    Ideias que se tornam
+
+                    <strong>
+                        experiências
+                    </strong>
+
+                </h2>
+
+
+                <p>
+
+                    O curso Técnico em Eventos prepara
+                    profissionais para planejar, organizar
+                    e realizar diferentes tipos de eventos.
+
+                </p>
+
+
+                <p>
+
+                    Os alunos aprendem a trabalhar com
+                    planejamento, produção, divulgação,
+                    organização e execução, transformando
+                    ideias em experiências para diferentes
+                    públicos.
+
+                </p>
+
+
+                <div class="me-course-info">
+
+
+                    <div>
+
+                        <strong>
+                            ME
+                        </strong>
+
+                        <span>
+                            Identidade
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Roxo
+                        </strong>
+
+                        <span>
+                            Cor
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Kraken
+                        </strong>
+
+                        <span>
+                            Mascote
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MASCOTE
+    ====================================================== -->
+
+    <section class="me-mascot">
+
+        <div class="me-container me-mascot-grid">
+
+
+            <div>
+
+
+                <span class="me-tag">
+                    MASCOTE DO ME
+                </span>
+
+
+                <h2>
+
+                    A força do
+
+                    <strong>
+                        Kraken
+                    </strong>
+
+                </h2>
+
+
+                <p>
+
+                    O Kraken é o símbolo do ME Temeritas.
+                    Uma criatura imponente que representa
+                    a presença e a identidade do M dentro
+                    da Etec Alberto Santos Dumont.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="kraken">
+
+                <i class="fa-solid fa-water"></i>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GRITO DE GUERRA
+    ====================================================== -->
+
+    <section class="me-grito" id="grito">
+
+        <div class="me-container">
+
+
+            <div class="me-grito-header">
+
+                <span>
+                    IDENTIDADE DO TEMERITAS
+                </span>
+
+
+                <h2>
+
+                    Grito de
+
+                    <strong>
+                        Guerra
+                    </strong>
+
+                </h2>
+
+            </div>
+
+
+            <div class="me-grito-box">
+
+
+                <p>
+                    SOU TEMERITAS!
+                </p>
+
+
+                <p class="repeat">
+                    (1x)
+                </p>
+
+
+                <p>
+                    SOU TORCIDA QUE CANTA E VIBRA!
+                </p>
+
+
+                <p class="repeat">
+                    (1x)
+                </p>
+
+
+                <p>
+                    ME IMPÕE RESPEITO!
+                </p>
+
+
+                <p class="repeat">
+                    (1x)
+                </p>
+
+
+                <p>
+                    TEMERITAS LEVO NO PEITO!
+                </p>
+
+
+                <p class="repeat">
+                    (1x)
+                </p>
+
+
+                <p>
+                    NÃO ME CANSO DE CANTAR!
+                </p>
+
+
+                <p class="repeat">
+                    (1x)
+                </p>
+
+
+                <p>
+                    E MEU M INCENTIVAR!
+                </p>
+
+
+                <p class="repeat">
+                    (1x)
+                </p>
+
+
+                <div class="me-grito-box .destaque">
+
+                    <div class="destaque">
+                        DALE KRAKEN!
+                    </div>
+
+                    <div class="destaque">
+                        DALE KRAKEN!
+                    </div>
+
+                </div>
+
+
+                <div class="kraken-grito">
+
+                    🐙 DALE KRAKEN! 🐙
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INSTAGRAM
+    ====================================================== -->
+
+    <section class="me-social">
+
+        <div class="me-container">
+
+
+            <span class="me-social-label">
+                ACOMPANHE O TEMERITAS
+            </span>
+
+
+            <h2>
+
+                Siga o
+
+                <strong>
+                    ME
+                </strong>
+
+            </h2>
+
+
+            <p>
+
+                Confira projetos, atividades, eventos
+                e novidades do curso.
+
+            </p>
+
+
+            <a
+                href="https://www.instagram.com/temeritas_me/"
+                target="_blank">
+
+                <i class="fa-brands fa-instagram"></i>
+
+                @temeritas_me
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="me-footer">
+
+        <div class="me-container">
+
+
+            <strong>
+                ME TEMERITAS
+            </strong>
+
+
+            <span>
+                Técnico em Eventos
+            </span>
+
+
+            <a href="../html/index.html">
+
+                ← Voltar para a Etec
+
+            </a>
+
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS Fidelis | Técnico em Secretariado</title>
+
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #202020;
+        background: #ffffff;
+        line-height: 1.6;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .ms-container {
+        width: min(1180px, 92%);
+        margin: auto;
+    }
+
+    .ms-header {
+        height: 82px;
+        background: #ffffff;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .ms-header .ms-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ms-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .ms-logo > span {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #8ed8f8;
+        color: #111111;
+        font-size: 17px;
+        font-weight: 900;
+    }
+
+    .ms-logo strong {
+        display: block;
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .ms-logo small {
+        color: #777777;
+        font-size: 11px;
+    }
+
+    .ms-header nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .ms-header nav a {
+        font-size: 14px;
+        font-weight: 600;
+        transition: .3s;
+    }
+
+    .ms-header nav a:hover {
+        color: #42a9d6;
+    }
+
+    .ms-instagram {
+        padding: 11px 17px;
+        background: #171717;
+        color: #ffffff !important;
+    }
+
+    .ms-instagram:hover {
+        background: #8ed8f8;
+        color: #111111 !important;
+    }
+
+    .ms-hero {
+        min-height: 620px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: linear-gradient(
+            110deg,
+            #101010 0%,
+            #171717 60%,
+            #8ed8f8 160%
+        );
+        color: white;
+    }
+
+    .ms-hero::after {
+        content: "MS";
+        position: absolute;
+        right: -50px;
+        bottom: -130px;
+        font-size: 420px;
+        font-weight: 900;
+        color: rgba(142, 216, 248, 0.08);
+    }
+
+    .ms-hero-content {
+        position: relative;
+        z-index: 2;
+        height: auto;
+    }
+
+    .ms-label {
+        color: #8ed8f8;
+        font-size: 11px;
+        letter-spacing: 4px;
+        font-weight: bold;
+    }
+
+    .ms-hero h1 {
+        font-size: clamp(55px, 8vw, 100px);
+        line-height: .95;
+        margin: 20px 0;
+    }
+
+    .ms-hero h1 strong {
+        display: block;
+        color: #8ed8f8;
+    }
+
+    .ms-hero p {
+        max-width: 620px;
+        color: #cccccc;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .ms-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 35px;
+    }
+
+    .ms-btn,
+    .ms-btn-outline {
+        padding: 14px 22px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+        transition: .3s;
+    }
+
+    .ms-btn {
+        background: #8ed8f8;
+        color: #111111;
+    }
+
+    .ms-btn:hover {
+        background: #ffffff;
+    }
+
+    .ms-btn-outline {
+        border: 1px solid #555555;
+        color: #ffffff;
+    }
+
+    .ms-btn-outline:hover {
+        border-color: #8ed8f8;
+        color: #8ed8f8;
+    }
+
+    .ms-identity {
+        padding: 70px 0;
+        background: #f7f7f7;
+    }
+
+    .identity-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .identity-card {
+        background: #ffffff;
+        padding: 35px;
+        border-bottom: 3px solid #8ed8f8;
+        transition: .3s;
+    }
+
+    .identity-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+    }
+
+    .identity-icon {
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #8ed8f8;
+        font-size: 21px;
+        margin-bottom: 20px;
+    }
+
+    .identity-card span {
+        color: #888888;
+        font-size: 10px;
+        letter-spacing: 3px;
+        font-weight: bold;
+    }
+
+    .identity-card h3 {
+        font-size: 25px;
+        margin: 8px 0;
+    }
+
+    .identity-card p {
+        color: #666666;
+        font-size: 14px;
+    }
+
+    .ms-about {
+        padding: 100px 0;
+    }
+
+    .ms-about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+    }
+
+    .ms-about-image {
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .ms-about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .5s;
+    }
+
+    .ms-about-image:hover img {
+        transform: scale(1.04);
+    }
+
+    .ms-label-dark {
+        color: #42a9d6;
+        font-size: 11px;
+        letter-spacing: 4px;
+        font-weight: bold;
+    }
+
+    .ms-about-content h2 {
+        font-size: 50px;
+        line-height: 1;
+        margin: 15px 0 25px;
+    }
+
+    .ms-about-content h2 strong {
+        color: #42a9d6;
+    }
+
+    .ms-about-content p {
+        color: #555555;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .ms-course-info {
+        display: flex;
+        gap: 35px;
+        margin-top: 35px;
+        padding-top: 25px;
+        border-top: 1px solid #dddddd;
+    }
+
+    .ms-course-info strong {
+        display: block;
+        font-size: 20px;
+    }
+
+    .ms-course-info span {
+        color: #777777;
+        font-size: 12px;
+    }
+
+    .ms-mascot {
+        background: #171717;
+        color: #ffffff;
+        padding: 90px 0;
+    }
+
+    .mascot-content {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        align-items: center;
+        gap: 80px;
+    }
+
+    .ms-mascot h2 {
+        font-size: 55px;
+        line-height: 1;
+        margin: 15px 0;
+    }
+
+    .ms-mascot h2 strong {
+        color: #8ed8f8;
+    }
+
+    .ms-mascot p {
+        max-width: 650px;
+        color: #bbbbbb;
+        line-height: 1.8;
+    }
+
+    .tigre {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: #8ed8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 100px;
+        color: #171717;
+        margin: auto;
+    }
+
+    .ms-grito {
+        padding: 100px 0;
+        background: #eefaff;
+    }
+
+    .grito-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .grito-header span {
+        color: #42a9d6;
+        font-size: 11px;
+        letter-spacing: 4px;
+        font-weight: bold;
+    }
+
+    .grito-header h2 {
+        font-size: 48px;
+        margin-top: 10px;
+    }
+
+    .grito-header h2 strong {
+        color: #42a9d6;
+    }
+
+    .grito-box {
+        max-width: 850px;
+        margin: auto;
+        background: #ffffff;
+        padding: 50px;
+        border-left: 5px solid #8ed8f8;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+        text-align: center;
+    }
+
+    .grito-box p {
+        font-size: 17px;
+        line-height: 2;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+
+    .grito-box .destaque {
+        color: #42a9d6;
+        font-size: 22px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        margin: 25px 0;
+    }
+
+    .grito-box .palmas {
+        font-size: 22px;
+        letter-spacing: 8px;
+        margin: 10px 0;
+    }
+
+    .grito-final {
+        margin-top: 30px;
+        padding-top: 25px;
+        border-top: 1px solid #dddddd;
+        font-weight: 900;
+        font-size: 25px;
+        color: #171717;
+    }
+
+    .ms-social {
+        padding: 90px 0;
+        text-align: center;
+    }
+
+    .ms-social > .ms-container > span {
+        color: #42a9d6;
+        font-size: 11px;
+        letter-spacing: 4px;
+        font-weight: bold;
+    }
+
+    .ms-social h2 {
+        font-size: 45px;
+        margin: 12px 0;
+    }
+
+    .ms-social h2 strong {
+        color: #42a9d6;
+    }
+
+    .ms-social p {
+        color: #666666;
+        margin-bottom: 25px;
+    }
+
+    .ms-social a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #171717;
+        color: #ffffff;
+        padding: 14px 22px;
+        font-weight: bold;
+        transition: .3s;
+    }
+
+    .ms-social a:hover {
+        background: #8ed8f8;
+        color: #111111;
+    }
+
+    .ms-footer {
+        background: #111111;
+        color: #ffffff;
+        padding: 35px 0;
+    }
+
+    .ms-footer .ms-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ms-footer strong {
+        color: #8ed8f8;
+        letter-spacing: 2px;
+    }
+
+    .ms-footer span {
+        color: #999999;
+        font-size: 13px;
+    }
+
+    .ms-footer a {
+        font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+        .ms-header nav {
+            display: none;
+        }
+
+        .identity-grid,
+        .ms-about-grid,
+        .mascot-content {
+            grid-template-columns: 1fr;
+        }
+
+        .ms-about-image {
+            height: 350px;
+        }
+
+        .ms-hero {
+            min-height: 550px;
+        }
+
+        .ms-hero h1 {
+            font-size: 65px;
+        }
+
+        .ms-about-content h2,
+        .ms-mascot h2 {
+            font-size: 40px;
+        }
+
+        .ms-buttons {
+            flex-direction: column;
+            width: fit-content;
+        }
+
+        .grito-box {
+            padding: 30px 20px;
+        }
+
+        .grito-header h2 {
+            font-size: 38px;
+        }
+
+        .ms-footer .ms-container {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+
+<header class="ms-header">
+    <div class="ms-container">
+
+        <a href="../html/index.html.html">
+    <img src="../Imagem/logo ms.jpg" alt="MI" style="height: 60px; width: auto;">
+
+            <div>
+                <strong>FIDELIS</strong>
+                <small>Técnico em Secretariado</small>
+            </div>
+        </a>
+
+        <nav>
+            <a href="../html/index.html">Início</a>
+            <a href="cursos.html">Cursos</a>
+            <a href="noticias.html">Notícias</a>
+
+            <a href="https://www.instagram.com/ms.etec/"
+                target="_blank"
+                class="ms-instagram">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+<section class="ms-hero">
+
+    <div class="ms-container ms-hero-content">
+
+        <span class="ms-label">
+            ETEC ALBERTO SANTOS DUMONT
+        </span>
+
+        <h1>
+            Técnico em
+            <strong>Secretariado</strong>
+        </h1>
+
+        <p>
+            Conheça o MS Fidelis, o M que representa
+            força, organização e determinação dentro
+            da Etec Alberto Santos Dumont.
+        </p>
+
+        <div class="ms-buttons">
+
+            <a href="#sobre" class="ms-btn">
+                Conheça o MS
+                <i class="fa-solid fa-arrow-down"></i>
+            </a>
+
+            <a href="https://www.instagram.com/ms.etec/"
+                target="_blank"
+                class="ms-btn-outline">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<section class="ms-identity">
+
+    <div class="ms-container">
+
+        <div class="identity-grid">
+
+            <div class="identity-card">
+                <div class="identity-icon">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <span>COR</span>
+
+                <h3>Azul-claro</h3>
+
+                <p>
+                    A cor que representa a identidade
+                    visual do MS.
+                </p>
+            </div>
+
+            <div class="identity-card">
+                <div class="identity-icon">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+
+                <span>MASCOTE</span>
+
+                <h3>Tigre</h3>
+
+                <p>
+                    Símbolo de força, presença e
+                    determinação.
+                </p>
+            </div>
+
+            <div class="identity-card">
+                <div class="identity-icon">
+                    <i class="fa-solid fa-flag"></i>
+                </div>
+
+                <span>LEMA</span>
+
+                <h3>Fidelis</h3>
+
+                <p>
+                    Uma palavra que representa a
+                    identidade do MS.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="ms-about" id="sobre">
+
+    <div class="ms-container ms-about-grid">
+
+        <div class="ms-about-image">
+            <img src="../Imagem/MS Fidelis.jpeg"
+                alt="MS Fidelis">
+        </div>
+
+        <div class="ms-about-content">
+
+            <span class="ms-label-dark">
+                SOBRE O CURSO
+            </span>
+
+            <h2>
+                Organização para o
+                <strong>mundo profissional</strong>
+            </h2>
+
+            <p>
+                O curso Técnico em Secretariado prepara
+                profissionais para atuar na organização
+                administrativa, comunicação, atendimento
+                e rotina de empresas e instituições.
+            </p>
+
+            <p>
+                Durante a formação, os alunos desenvolvem
+                habilidades de planejamento, organização,
+                comunicação profissional e gestão das
+                atividades do ambiente de trabalho.
+            </p>
+
+            <div class="ms-course-info">
+
+                <div>
+                    <strong>MS</strong>
+                    <span>Identidade</span>
+                </div>
+
+                <div>
+                    <strong>Tigre</strong>
+                    <span>Mascote</span>
+                </div>
+
+                <div>
+                    <strong>Fidelis</strong>
+                    <span>Lema</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ms-mascot">
+
+    <div class="ms-container mascot-content">
+
+        <div>
+
+            <span class="ms-label">
+                O MASCOTE
+            </span>
+
+            <h2>
+                A força do
+                <strong>Tigre</strong>
+            </h2>
+
+            <p>
+                O tigre representa a força e a determinação
+                do MS. Uma identidade que acompanha o curso
+                e seus alunos dentro da Etec.
+            </p>
+
+        </div>
+
+        <div class="tigre">
+            <i class="fa-solid fa-paw"></i>
+        </div>
+
+    </div>
+</section>
+
+<section class="ms-grito">
+
+    <div class="ms-container">
+
+        <div class="grito-header">
+
+            <span>IDENTIDADE DO MS</span>
+
+            <h2>
+                Grito de
+                <strong>Guerra</strong>
+            </h2>
+
+        </div>
+
+        <div class="grito-box">
+
+            <p>
+                Contra todo falador que já nos criticou
+            </p>
+
+            <p>
+                <em>
+                    (Contra todo falador que já nos criticou)
+                </em>
+            </p>
+
+            <p>
+                O MS mostrou que nunca para de lutar.
+            </p>
+
+            <p>
+                <em>
+                    (O MS mostrou que nunca para de lutar.)
+                </em>
+            </p>
+
+            <p>
+                Quem desacreditou
+                <br>
+                O tigre vai devorar
+            </p>
+
+            <p>
+                <em>
+                    (Quem desacreditou
+                    <br>
+                    O tigre vai devorar)
+                </em>
+            </p>
+
+            <p>
+                Não temos medo de acabar
+            </p>
+
+            <p>
+                <em>
+                    (Não temos medo de acabar)
+                </em>
+            </p>
+
+            <p>
+                Canto MS sem parar
+            </p>
+
+            <p>
+                <em>
+                    (Canto MS sem parar)
+                </em>
+            </p>
+
+            <p>
+                Nossa corrente é forte
+                <br>
+                e jamais se quebrará
+            </p>
+
+            <p>
+                <em>
+                    (Nossa corrente é forte
+                    <br>
+                    e jamais se quebrará)
+                </em>
+            </p>
+
+            <div class="grito-header" style="margin: 35px 0 20px;">
+
+                <div class="palmas">👏 👏 👏</div>
+
+                <div class="destaque">
+                    PELO MS
+                </div>
+
+                <div class="palmas">👏 👏 👏</div>
+
+                <div class="destaque">
+                    COM MUITO AMOR
+                </div>
+
+                <div class="palmas">👏 👏 👏</div>
+
+                <div class="destaque">
+                    ATÉ O FIM!
+                </div>
+
+            </div>
+
+            <div class="grito-final">
+                FI-DE-LIS!
+            </div>
+
+            <p style="margin-top: 30px;">
+                Meus amigos falaram
+                <br>
+                Só quem vive entende
+                <br><br>
+
+                Uma vez MS
+                <br>
+
+                <strong>
+                    MS PRA SEMPRE!
+                </strong>
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<section class="ms-social">
+
+    <div class="ms-container">
+
+        <span>ACOMPANHE O MS</span>
+
+        <h2>
+            Siga o
+            <strong>MS Fidelis</strong>
+        </h2>
+
+        <p>
+            Confira projetos, atividades e novidades
+            do curso de Secretariado.
+        </p>
+
+        <a href="https://www.instagram.com/ms.etec/"
+            target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            @ms.etec
+        </a>
+
+    </div>
+</section>
+
+<footer class="ms-footer">
+
+    <div class="ms-container">
+
+        <strong>MS FIDELIS</strong>
+
+        <span>
+            Técnico em Secretariado
+        </span>
+
+        <a href="../html/index.html">
+            ← Voltar para a Etec
+        </a>
+
+    </div>
+</footer>
+```
+
+</body>
+
+</html>

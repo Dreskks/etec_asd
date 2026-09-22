@@ -1,0 +1,1418 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MA Excelsior | Etec Alberto Santos Dumont</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =====================================================
+           CONFIGURAÇÕES
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1150px, 92%);
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        header {
+            height: 80px;
+            background: #080808;
+            border-bottom: 1px solid #292929;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #c90000;
+
+            font-weight: 900;
+            font-size: 16px;
+
+            clip-path: polygon(
+                50% 0,
+                100% 25%,
+                88% 100%,
+                12% 100%,
+                0 25%
+            );
+        }
+
+        .logo strong {
+            display: block;
+            letter-spacing: 3px;
+        }
+
+        .logo small {
+            display: block;
+            color: #888;
+            font-size: 9px;
+            max-width: 240px;
+            line-height: 1.2;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .menu a {
+            color: #ccc;
+            font-size: 13px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .menu a:hover {
+            color: #e00000;
+        }
+
+        .instagram {
+            padding: 10px 16px;
+            background: #c90000;
+            color: white !important;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 80% 45%,
+                    rgba(220, 0, 0, .35),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #050505,
+                    #180000,
+                    #3b0000
+                );
+        }
+
+        .hero::before {
+            content: "EXCELSIOR";
+
+            position: absolute;
+            right: -80px;
+            bottom: -30px;
+
+            font-size: 150px;
+            font-weight: 900;
+
+            color: rgba(255,255,255,.025);
+
+            transform: rotate(-8deg);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tag {
+            display: inline-block;
+
+            border-left: 4px solid #d00000;
+
+            padding: 7px 14px;
+
+            background: rgba(255,255,255,.05);
+
+            color: #ddd;
+
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            margin-top: 25px;
+
+            font-size: clamp(65px, 10vw, 125px);
+
+            line-height: .82;
+
+            text-transform: uppercase;
+
+            letter-spacing: -5px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: #d00000;
+
+            text-shadow:
+                0 0 35px rgba(210,0,0,.4);
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            margin-top: 30px;
+
+            color: #aaa;
+
+            font-size: 16px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 13px 20px;
+
+            background: #d00000;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #ff2020;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            padding: 13px 20px;
+
+            border: 1px solid #555;
+
+            color: #ddd;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .btn-outline:hover {
+            border-color: #d00000;
+        }
+
+
+        /* =====================================================
+           IDENTIDADE
+        ====================================================== */
+
+        .identity {
+            background: #0e0e0e;
+
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .identity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .identity-card {
+            padding: 35px;
+
+            border-right: 1px solid #292929;
+        }
+
+        .identity-card:last-child {
+            border-right: none;
+        }
+
+        .identity-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #280000;
+
+            color: #e00000;
+
+            margin-bottom: 16px;
+        }
+
+        .identity-card span {
+            color: #777;
+
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
+        .identity-card h3 {
+            margin-top: 5px;
+            font-size: 23px;
+        }
+
+        .identity-card p {
+            color: #999;
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           SOBRE
+        ====================================================== */
+
+        .sobre {
+            padding: 105px 0;
+
+            background: #fff;
+            color: #171717;
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .sobre-img {
+            height: 450px;
+
+            background: #160000;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .sobre-img img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+        .sobre-img:hover img {
+            transform: scale(1.04);
+        }
+
+        .section-label {
+            color: #c90000;
+
+            font-size: 10px;
+            font-weight: bold;
+
+            letter-spacing: 4px;
+        }
+
+        .sobre h2 {
+            font-size: 52px;
+
+            line-height: 1;
+
+            margin: 15px 0 25px;
+        }
+
+        .sobre h2 strong {
+            color: #c90000;
+        }
+
+        .sobre p {
+            color: #555;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           ATUAÇÃO
+        ====================================================== */
+
+        .atuacao {
+            padding: 105px 0;
+
+            background: #111;
+        }
+
+        .atuacao-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .atuacao h2 {
+            font-size: 55px;
+
+            line-height: .95;
+
+            margin: 15px 0 25px;
+        }
+
+        .atuacao h2 strong {
+            color: #e00000;
+        }
+
+        .atuacao p {
+            color: #aaa;
+        }
+
+        .atuacao-box {
+            padding: 40px;
+
+            border-left: 5px solid #d00000;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1b0000,
+                    #080808
+                );
+        }
+
+        .atuacao-box i {
+            color: #e00000;
+
+            font-size: 35px;
+
+            margin-bottom: 20px;
+        }
+
+        .atuacao-box h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .atuacao-box p {
+            color: #999;
+        }
+
+
+        /* =====================================================
+           LEMA
+        ====================================================== */
+
+        .lema {
+            padding: 90px 0;
+
+            background: #c90000;
+
+            text-align: center;
+        }
+
+        .lema small {
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+
+        .lema h2 {
+            margin-top: 10px;
+
+            font-size: clamp(60px, 9vw, 110px);
+
+            line-height: .9;
+
+            text-transform: uppercase;
+
+            letter-spacing: -4px;
+        }
+
+        .lema p {
+            margin-top: 15px;
+
+            font-size: 18px;
+            opacity: .9;
+        }
+
+
+        /* =====================================================
+           MASCOTE
+        ====================================================== */
+
+        .mascote {
+            padding: 105px 0;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #3b0000,
+                    #090909 60%
+                );
+
+            text-align: center;
+        }
+
+        .phoenix {
+            width: 120px;
+            height: 120px;
+
+            margin: 0 auto 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #210000;
+
+            border: 1px solid #710000;
+
+            color: #e00000;
+
+            font-size: 55px;
+
+            box-shadow:
+                0 0 60px rgba(220,0,0,.25);
+        }
+
+        .mascote h2 {
+            font-size: 55px;
+            margin: 10px 0;
+        }
+
+        .mascote h2 strong {
+            color: #e00000;
+        }
+
+        .mascote p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #999;
+        }
+
+
+        /* =====================================================
+           GRITO
+        ====================================================== */
+
+        .grito {
+            padding: 100px 0;
+
+            background: #f1f1f1;
+
+            color: #171717;
+        }
+
+        .grito-header {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .grito-header span {
+            color: #c90000;
+
+            font-size: 10px;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        .grito-header h2 {
+            font-size: 50px;
+            margin-top: 5px;
+        }
+
+        .grito-header h2 strong {
+            color: #c90000;
+        }
+
+        .grito-box {
+            max-width: 800px;
+
+            margin: auto;
+
+            padding: 42px;
+
+            background: #fff;
+
+            border-top: 6px solid #c90000;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.08);
+
+            text-align: center;
+        }
+
+        .grito-box p {
+            margin: 5px 0;
+
+            font-size: 16px;
+        }
+
+        .grito-box .repeat {
+            color: #999;
+
+            font-size: 12px;
+
+            font-style: italic;
+        }
+
+        .grito-destaque {
+            margin: 25px 0;
+
+            padding: 20px;
+
+            background: #150000;
+
+            color: white;
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+        .grito-final {
+            margin-top: 25px;
+
+            color: #c90000;
+
+            font-size: 27px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =====================================================
+           INSTAGRAM
+        ====================================================== */
+
+        .social {
+            padding: 80px 0;
+
+            background: white;
+
+            color: #171717;
+
+            text-align: center;
+        }
+
+        .social h2 {
+            font-size: 45px;
+
+            margin: 10px 0;
+        }
+
+        .social h2 strong {
+            color: #c90000;
+        }
+
+        .social p {
+            color: #666;
+
+            margin-bottom: 25px;
+        }
+
+        .social a {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 22px;
+
+            background: #c90000;
+
+            color: white;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .social a:hover {
+            background: #850000;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+            padding: 28px 0;
+
+            background: #080808;
+        }
+
+        .footer-content {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer strong {
+            color: #e00000;
+
+            letter-spacing: 2px;
+        }
+
+        footer span {
+            color: #777;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ====================================================== */
+
+        @media (max-width: 850px) {
+
+            .menu {
+                display: none;
+            }
+
+            .identity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .identity-card {
+                border-right: none;
+
+                border-bottom: 1px solid #292929;
+            }
+
+            .sobre-grid,
+            .atuacao-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sobre-img {
+                height: 330px;
+            }
+
+            .hero h1 {
+                font-size: 65px;
+            }
+
+            .sobre h2,
+            .atuacao h2,
+            .mascote h2 {
+                font-size: 43px;
+            }
+
+            .buttons {
+                flex-direction: column;
+
+                width: fit-content;
+            }
+
+            .grito-box {
+                padding: 30px 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+
+                gap: 12px;
+
+                text-align: center;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         MENU
+    ====================================================== -->
+
+    <header>
+
+        <div class="container nav">
+
+            <a href="../html/index.html.html">
+    <img src="../Imagem/Logo MA.jpg" alt="MI" style="height: 60px; width: auto;">
+
+
+                   
+
+                <div>
+
+                  
+                </div>
+
+            </a>
+
+
+            <nav class="menu">
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="cursos.html">
+                    M's
+                </a>
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#atuacao">
+                    Atuação
+                </a>
+
+                <a href="#lema">
+                    Lema
+                </a>
+
+                <a href="#mascote">
+                    Mascote
+                </a>
+
+                <a href="#grito">
+                    Grito
+                </a>
+
+                <a
+                    href="https://www.instagram.com/ma.excelsior/"
+                    target="_blank"
+                    class="instagram">
+
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <span class="tag">
+                ETEC ALBERTO SANTOS DUMONT
+            </span>
+
+
+            <h1>
+
+                MA
+
+                <span>
+                    EXCELSIOR
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Ensino Médio com Ênfase em Ciências da Natureza
+                e suas Tecnologias.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a href="#sobre" class="btn">
+                    Conheça o MA
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/ma.excelsior/"
+                    target="_blank"
+                    class="btn-outline">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    @ma.excelsior
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         IDENTIDADE
+    ====================================================== -->
+
+    <section class="identity">
+
+        <div class="container identity-grid">
+
+
+            <div class="identity-card">
+
+                <div class="identity-icon">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+
+                <span>
+                    COR
+                </span>
+
+                <h3>
+                    Vermelho
+                </h3>
+
+                <p>
+                    A cor que representa a identidade do MA.
+                </p>
+
+            </div>
+
+
+            <div class="identity-card">
+
+                <div class="identity-icon">
+                    <i class="fa-solid fa-feather-pointed"></i>
+                </div>
+
+                <span>
+                    MASCOTE
+                </span>
+
+                <h3>
+                    Fênix
+                </h3>
+
+                <p>
+                    O símbolo que representa o MA Excelsior.
+                </p>
+
+            </div>
+
+
+            <div class="identity-card">
+
+                <div class="identity-icon">
+                    <i class="fa-solid fa-flask"></i>
+                </div>
+
+                <span>
+                    ÊNFASE
+                </span>
+
+                <h3>
+                    Ciências da Natureza
+                </h3>
+
+                <p>
+                    Ciências da Natureza e suas Tecnologias.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOBRE
+    ====================================================== -->
+
+    <section class="sobre" id="sobre">
+
+        <div class="container sobre-grid">
+
+
+            <div class="sobre-img">
+
+                <!--
+                    COLOQUE A IMAGEM DO MA AQUI.
+
+                    Exemplo:
+                    ../Imagem/MA Excelsior.jpeg
+                -->
+
+                <img
+                    src="../Imagem/MA excelsior.jpeg"
+                    alt="MA Excelsior">
+
+            </div>
+
+
+            <div>
+
+                <span class="section-label">
+                    SOBRE
+                </span>
+
+
+                <h2>
+
+                    Conheça o
+
+                    <strong>
+                        MA
+                    </strong>
+
+                </h2>
+
+
+                <p>
+
+                    O MA Excelsior é uma das ênfases do Ensino
+                    Médio da Etec Alberto Santos Dumont.
+
+                </p>
+
+
+                <p>
+
+                    Sua formação possui Ênfase em Ciências da
+                    Natureza e suas Tecnologias, trazendo uma
+                    abordagem voltada ao estudo e à compreensão
+                    dos fenômenos naturais e científicos.
+
+                </p>
+
+
+                <p>
+
+                    O vermelho, a Fênix e o lema Excelsior fazem
+                    parte da identidade que representa o MA.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ATUAÇÃO
+    ====================================================== -->
+
+    <section class="atuacao" id="atuacao">
+
+        <div class="container atuacao-grid">
+
+
+            <div>
+
+                <span class="section-label">
+                    ATUAÇÃO
+                </span>
+
+
+                <h2>
+
+                    Ciências da Natureza
+
+                    <strong>
+                        e Tecnologia
+                    </strong>
+
+                </h2>
+
+
+                <p>
+
+                    A ênfase amplia a formação do Ensino Médio
+                    por meio de conhecimentos relacionados às
+                    Ciências da Natureza e suas Tecnologias.
+
+                </p>
+
+            </div>
+
+
+            <div class="atuacao-box">
+
+                <i class="fa-solid fa-flask"></i>
+
+
+                <h3>
+                    Onde atua?
+                </h3>
+
+
+                <p>
+
+                    O MA trabalha conhecimentos e experiências
+                    relacionados às Ciências da Natureza,
+                    aproximando ciência, tecnologia e cotidiano
+                    durante a formação do estudante.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LEMA
+    ====================================================== -->
+
+    <section class="lema" id="lema">
+
+        <div class="container">
+
+            <small>
+                LEMA DO MA
+            </small>
+
+
+            <h2>
+                Excelsior
+            </h2>
+
+
+            <p>
+                Sempre mais alto. Sempre em frente.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MASCOTE
+    ====================================================== -->
+
+    <section class="mascote" id="mascote">
+
+        <div class="container">
+
+
+            <div class="phoenix">
+
+                <i class="fa-solid fa-feather-pointed"></i>
+
+            </div>
+
+
+            <span class="section-label">
+                MASCOTE
+            </span>
+
+
+            <h2>
+
+                A
+
+                <strong>
+                    Fênix
+                </strong>
+
+            </h2>
+
+
+            <p>
+
+                A Fênix é o mascote do MA Excelsior e faz parte
+                da identidade da ênfase, representando a força
+                e a presença do MA dentro da Etec.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GRITO DE GUERRA
+    ====================================================== -->
+
+    <section class="grito" id="grito">
+
+        <div class="container">
+
+
+            <div class="grito-header">
+
+                <span>
+                    GRITO DE GUERRA
+                </span>
+
+
+                <h2>
+
+                    Voz do
+
+                    <strong>
+                        Excelsior
+                    </strong>
+
+                </h2>
+
+            </div>
+
+
+            <div class="grito-box">
+
+
+                <p>
+                    Eu sou um guerreiro que sozinho eu mato mil!
+                </p>
+
+                <p class="repeat">
+                    (2x)
+                </p>
+
+
+                <p>
+                    Eu sou da Excelsior,
+                    a mais temida do Brasil!
+                </p>
+
+                <p class="repeat">
+                    (2x)
+                </p>
+
+
+                <p>
+                    Se é pra matar, se é pra morrer,
+                </p>
+
+                <p>
+                    eu quebro, mato e morro
+                    se a gente não vencer!
+                </p>
+
+
+                <div class="grito-destaque">
+
+                    VERMELHO É A COR! ❤️‍🔥
+
+                </div>
+
+
+                <p>
+                    É raça, é determinação!
+                </p>
+
+
+                <p>
+                    Se depender da gente,
+                    o MA é campeão!
+                </p>
+
+
+                <p class="repeat">
+                    (2x)
+                </p>
+
+
+                <p>
+                    A inteligência é a nossa arma,
+                    deixando qualquer adversário no chão!
+                </p>
+
+
+                <div class="grito-final">
+
+                    MM! MA! HEY!<br>
+                    CAMPEÃO! HEY!
+
+                </div>
+
+
+                <div class="grito-final">
+
+                    EXCELSIOR! 🔥
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INSTAGRAM
+    ====================================================== -->
+
+    <section class="social">
+
+        <div class="container">
+
+
+            <span class="section-label">
+                REDES SOCIAIS
+            </span>
+
+
+            <h2>
+
+                Siga o
+
+                <strong>
+                    MA Excelsior
+                </strong>
+
+            </h2>
+
+
+            <p>
+                Acompanhe as novidades e atividades do MA.
+            </p>
+
+
+            <a
+                href="https://www.instagram.com/ma.excelsior/"
+                target="_blank">
+
+                <i class="fa-brands fa-instagram"></i>
+
+                @ma.excelsior
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <strong>
+                MA EXCELSIOR
+            </strong>
+
+
+            <span>
+                Ensino Médio com Ênfase em Ciências da Natureza e suas Tecnologias
+            </span>
+
+
+            <a href="../html/index.html">
+                ← Voltar para a Etec
+            </a>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

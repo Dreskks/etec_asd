@@ -1,0 +1,1266 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MGA | Gastronomia - Etec Alberto Santos Dumont</title>
+
+    <!-- ÍCONE DA ABA -->
+    <!-- Troque pelo nome da sua imagem, se necessário -->
+    <link rel="icon" href="imagens/logo-mga.png">
+
+
+    <style>
+
+        /* ==================================================
+           CONFIGURAÇÕES GERAIS
+        ================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fffaf5;
+            color: #292929;
+        }
+
+
+        /* ==================================================
+           BOTÃO VOLTAR PARA A ETEC
+        ================================================== */
+
+        .voltar {
+            position: fixed;
+
+            top: 95px;
+            left: 25px;
+
+            z-index: 999;
+
+            background-color: white;
+            color: #e87500;
+
+            text-decoration: none;
+
+            padding: 11px 20px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+            transition: 0.3s;
+        }
+
+        .voltar:hover {
+            background-color: #e87500;
+            color: white;
+
+            transform: translateX(-4px);
+        }
+
+
+        /* ==================================================
+           MENU
+        ================================================== */
+
+        header {
+            width: 100%;
+
+            background-color: white;
+
+            padding: 18px 7%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .logo {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+
+            color: #e87500;
+
+            font-size: 22px;
+
+            font-weight: 800;
+        }
+
+
+        .logo img {
+            width: 42px;
+            height: 42px;
+
+            object-fit: contain;
+        }
+
+
+        nav {
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+        }
+
+
+        nav a {
+            text-decoration: none;
+
+            color: #333;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+            color: #e87500;
+        }
+
+
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .hero {
+
+            min-height: 650px;
+
+            padding: 80px 8%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 60px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #fff7ef,
+                    #ffe4c7,
+                    #ffbd73
+                );
+        }
+
+
+        .hero-text {
+            max-width: 620px;
+        }
+
+
+        .tag {
+
+            display: inline-block;
+
+            background-color: #e87500;
+
+            color: white;
+
+            padding: 9px 18px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+
+            font-size: 80px;
+
+            line-height: 0.9;
+
+            color: #d86100;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hero h2 {
+
+            font-size: 27px;
+
+            color: #333;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero p {
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color: #555;
+
+            max-width: 560px;
+        }
+
+
+        .botoes {
+
+            margin-top: 30px;
+
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .botao {
+
+            padding: 14px 25px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .botao-principal {
+
+            background-color: #e87500;
+
+            color: white;
+        }
+
+
+        .botao-principal:hover {
+
+            background-color: #c95f00;
+
+            transform: translateY(-3px);
+        }
+
+
+        .botao-outline {
+
+            border: 2px solid #e87500;
+
+            color: #e87500;
+
+            background-color: white;
+        }
+
+
+        .botao-outline:hover {
+
+            background-color: #e87500;
+
+            color: white;
+        }
+
+
+        /* ==================================================
+           MASCOTE
+        ================================================== */
+
+        .mascote {
+
+            width: 370px;
+
+            height: 370px;
+
+            background-color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            box-shadow:
+                0 20px 50px rgba(180, 90, 0, 0.2);
+
+            border: 8px solid rgba(255,255,255,0.8);
+
+            overflow: hidden;
+
+            animation: flutuar 3s ease-in-out infinite;
+        }
+
+
+        .mascote img {
+
+            width: 90%;
+
+            height: 90%;
+
+            object-fit: contain;
+        }
+
+
+        @keyframes flutuar {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+
+        /* ==================================================
+           SOBRE
+        ================================================== */
+
+        .sobre {
+
+            padding: 90px 8%;
+
+            text-align: center;
+        }
+
+
+        .titulo {
+
+            font-size: 38px;
+
+            color: #d86100;
+
+            margin-bottom: 15px;
+        }
+
+
+        .subtitulo {
+
+            max-width: 720px;
+
+            margin: 0 auto 50px;
+
+            color: #666;
+
+            line-height: 1.7;
+        }
+
+
+        .cards {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .card {
+
+            background-color: white;
+
+            padding: 35px 25px;
+
+            border-radius: 20px;
+
+            border-top: 5px solid #e87500;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-8px);
+        }
+
+
+        .icone {
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .card h3 {
+
+            margin-bottom: 12px;
+
+            color: #333;
+        }
+
+
+        .card p {
+
+            color: #666;
+
+            line-height: 1.6;
+        }
+
+
+        /* ==================================================
+           GALERIA
+        ================================================== */
+
+        .galeria {
+
+            background-color: #fff0df;
+
+            padding: 90px 8%;
+
+            text-align: center;
+        }
+
+
+        .galeria-texto {
+
+            color: #666;
+
+            margin-bottom: 45px;
+        }
+
+
+        .fotos {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .foto {
+
+            height: 310px;
+
+            background-color: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.12);
+
+            transition: 0.3s;
+        }
+
+
+        .foto:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 15px 30px rgba(0,0,0,0.15);
+        }
+
+
+        .foto img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        /* ==================================================
+           LEMA
+        ================================================== */
+
+        .lema {
+
+            padding: 90px 20px;
+
+            text-align: center;
+
+            background-color: #e87500;
+
+            color: white;
+        }
+
+
+        .lema h2 {
+
+            font-size: 55px;
+
+            font-weight: 900;
+
+            margin-bottom: 15px;
+        }
+
+
+        .lema p {
+
+            font-size: 20px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+        }
+
+
+        /* ==================================================
+           GRITO
+        ================================================== */
+
+        .grito {
+
+            padding: 90px 20px;
+
+            text-align: center;
+
+            background-color: #fffaf5;
+        }
+
+
+        .grito-box {
+
+            max-width: 850px;
+
+            margin: 40px auto 0;
+
+            padding: 45px;
+
+            background-color: white;
+
+            border-radius: 25px;
+
+            border-left: 6px solid #e87500;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.08);
+        }
+
+
+        .grito-box p {
+
+            font-size: 19px;
+
+            line-height: 2;
+
+            color: #444;
+        }
+
+
+        .destaque {
+
+            color: #e87500;
+
+            font-weight: 900;
+        }
+
+
+        /* ==================================================
+           INSTAGRAM
+        ================================================== */
+
+        .instagram {
+
+            padding: 75px 20px;
+
+            text-align: center;
+
+            background-color: #fff0df;
+        }
+
+
+        .instagram h2 {
+
+            font-size: 34px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .instagram p {
+
+            color: #666;
+
+            margin-bottom: 25px;
+        }
+
+
+        .instagram a {
+
+            display: inline-block;
+
+            background-color: #e87500;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 15px 30px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .instagram a:hover {
+
+            background-color: #c95f00;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ==================================================
+           RODAPÉ
+        ================================================== */
+
+        footer {
+
+            background-color: #252525;
+
+            color: white;
+
+            padding: 45px 8%;
+
+            text-align: center;
+        }
+
+
+        footer h3 {
+
+            color: #ff9a38;
+
+            margin-bottom: 12px;
+        }
+
+
+        footer p {
+
+            color: #bbb;
+
+            line-height: 1.6;
+        }
+
+
+        .copyright {
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #444;
+
+            color: #888;
+
+            font-size: 14px;
+        }
+
+
+        /* ==================================================
+           RESPONSIVIDADE
+        ================================================== */
+
+        @media (max-width: 900px) {
+
+            .hero {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .hero p {
+
+                margin: auto;
+            }
+
+
+            .botoes {
+
+                justify-content: center;
+            }
+
+
+            .cards {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .fotos {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .mascote {
+
+                width: 290px;
+
+                height: 290px;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            nav {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 15px;
+            }
+
+
+            .voltar {
+
+                top: 140px;
+
+                left: 15px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 55px;
+            }
+
+
+            .hero h2 {
+
+                font-size: 21px;
+            }
+
+
+            .lema h2 {
+
+                font-size: 40px;
+            }
+
+
+            .grito-box {
+
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         BOTÃO VOLTAR
+    ================================================== -->
+
+    <!--
+        Se o index.html principal estiver uma pasta acima,
+        ../index.html está correto.
+    -->
+
+    
+
+
+    <!-- ==================================================
+         MENU
+    ================================================== -->
+
+    <header>
+
+        <a href="../html/index.html.html">
+    <img src="../Imagem/logo mga.jpg" alt="MI" style="height: 60px; width: auto;">
+
+        </a>
+
+
+        <nav>
+
+            <a href="#inicio">Início</a>
+
+            <a href="#sobre">O MGA</a>
+
+            <a href="#gastronomia">Gastronomia</a>
+
+            <a href="#grito">Grito</a>
+
+            <a href="#instagram">Instagram</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==================================================
+         HERO
+    ================================================== -->
+
+    <section class="hero" id="inicio">
+
+
+        <div class="hero-text">
+
+            <span class="tag">
+                Etec Alberto Santos Dumont
+            </span>
+
+
+            <h1>
+                MGA
+            </h1>
+
+
+            <h2>
+                Técnico em Gastronomia
+            </h2>
+
+
+            <p>
+                Sabor, criatividade, técnica e determinação.
+                O MGA representa a Gastronomia com a força
+                de quem nunca desiste e sempre busca a vitória.
+            </p>
+
+
+            <div class="botoes">
+
+                <a href="#gastronomia"
+                   class="botao botao-principal">
+
+                    Conheça nossos pratos
+
+                </a>
+
+
+                <a href="https://www.instagram.com/mga_invicti"
+                   target="_blank"
+                   class="botao botao-outline">
+
+                    📷 Instagram
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             MASCOTE
+        ================================================== -->
+
+        <div class="mascote">
+
+            <!--
+                COLOQUE A IMAGEM DA RAPOSA CHEF AQUI:
+
+                imagens/raposa-chef.png
+
+                Se ainda não tiver a imagem,
+                pode deixar o espaço vazio.
+            -->
+
+            <img src="../Imagem/MGA invicti.jpeg"
+                 
+        </div>
+
+
+    </section>
+
+
+    <!-- ==================================================
+         SOBRE O MGA
+    ================================================== -->
+
+    <section class="sobre" id="sobre">
+
+        <h2 class="titulo">
+            O MGA
+        </h2>
+
+
+        <p class="subtitulo">
+
+            O curso de Gastronomia prepara profissionais para
+            atuar na criação, preparação e apresentação de
+            diferentes pratos, desenvolvendo técnica,
+            criatividade e organização.
+
+        </p>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="icone">
+                    👨‍🍳
+                </div>
+
+                <h3>
+                    Gastronomia
+                </h3>
+
+                <p>
+                    Técnicas culinárias, preparo de alimentos,
+                    apresentação de pratos e rotina profissional
+                    de uma cozinha.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    🔥
+                </div>
+
+                <h3>
+                    Criatividade
+                </h3>
+
+                <p>
+                    Os alunos desenvolvem criatividade para
+                    transformar ingredientes em pratos
+                    únicos e bem apresentados.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    🏆
+                </div>
+
+                <h3>
+                    INVICTI
+                </h3>
+
+                <p>
+                    Força, garra e determinação representam
+                    o espírito do MGA dentro e fora da cozinha.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         GASTRONOMIA / FOTOS
+    ================================================== -->
+
+    <section class="galeria" id="gastronomia">
+
+        <h2 class="titulo">
+            Sabores do MGA
+        </h2>
+
+
+        <p class="galeria-texto">
+
+            Confira algumas das produções realizadas
+            pelos alunos do curso de Gastronomia.
+
+        </p>
+
+
+        <div class="fotos">
+
+
+            <!-- FOTO 1 -->
+
+            <div class="foto">
+
+                <img src="../Imagem/comida1.jpeg"
+                     alt="Prato preparado pelos alunos do MGA">
+
+            </div>
+
+
+            <!-- FOTO 2 -->
+
+            <div class="foto">
+
+                <img src="../Imagem/comida2.jpeg"
+                     alt="Prato preparado pelos alunos do MGA">
+
+            </div>
+
+
+            <!-- FOTO 3 -->
+
+            <div class="foto">
+
+                <img src="../Imagem/comida3.jpeg"
+                     alt="Prato preparado pelos alunos do MGA">
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         LEMA
+    ================================================== -->
+
+    <section class="lema">
+
+        <h2>
+            INVICTI
+        </h2>
+
+
+        <p>
+            FORÇA • GARRA • DETERMINAÇÃO
+        </p>
+
+    </section>
+
+
+    <!-- ==================================================
+         GRITO DO MGA
+    ================================================== -->
+
+    <section class="grito" id="grito">
+
+        <h2 class="titulo">
+            🦊 Grito do MGA
+        </h2>
+
+
+        <div class="grito-box">
+
+            <p>
+
+                <span class="destaque">
+                    Da onde somos?
+                </span>
+                — Do MGA!
+
+                <br>
+
+
+                <span class="destaque">
+                    Quem somos?
+                </span>
+                — INVENCÍVEIS!
+
+                <br>
+
+
+                <span class="destaque">
+                    O que queremos?
+                </span>
+                — VITÓRIA!
+
+                <br>
+
+
+                <span class="destaque">
+                    Se cair?
+                </span>
+                — VAI LEVANTA!
+
+                <br>
+
+
+                <span class="destaque">
+                    Se errar?
+                </span>
+                — VAI APRENDER!
+
+                <br><br>
+
+
+                <strong>
+
+                    FORÇA, GARRA E DETERMINAÇÃO,
+                    <br>
+
+                    PRA SEMPRE MGA,
+                    <br>
+
+                    O ETERNO CAMPEÃO!
+
+                </strong>
+
+                <br><br>
+
+
+                <span class="destaque">
+
+                    UH, TREMEU!
+                    <br>
+
+                    A RAPOSA APARECEU!
+
+                </span>
+
+                <br><br>
+
+
+                <span class="destaque">
+
+                    UH, TREMEU!
+                    <br>
+
+                    A RAPOSA APARECEU!
+
+                </span>
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         INSTAGRAM
+    ================================================== -->
+
+    <section class="instagram" id="instagram">
+
+        <h2>
+            Acompanhe o MGA
+        </h2>
+
+
+        <p>
+
+            Confira os pratos, projetos, eventos
+            e novidades do curso de Gastronomia.
+
+        </p>
+
+
+        <a href="https://www.instagram.com/mga_invicti"
+           target="_blank">
+
+            📷 @mga_invicti
+
+        </a>
+
+    </section>
+
+
+    <!-- ==================================================
+         RODAPÉ
+    ================================================== -->
+
+    <footer>
+
+        <h3>
+            🦊 MGA • INVICTI
+        </h3>
+
+
+        <p>
+
+            Técnico em Gastronomia
+            <br>
+
+            Etec Alberto Santos Dumont
+            <br>
+
+            Guarujá - SP
+
+        </p>
+
+
+        <div class="copyright">
+
+            © 2026 Etec Alberto Santos Dumont.
+            Todos os direitos reservados.
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
+

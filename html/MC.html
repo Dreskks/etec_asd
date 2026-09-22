@@ -1,0 +1,1612 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MC Plus Ultra | Etec Alberto Santos Dumont</title>
+
+    <!-- ÍCONE DA ABA -->
+    <link
+        rel="icon"
+        href="../Imagem/etec_alberto_santos_dumont_logo.jpg">
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           CONFIGURAÇÕES GERAIS
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f3f5f9;
+            color: #171b24;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           TOPO
+        ===================================================== */
+
+        .top-bar {
+            background: #080d18;
+            color: white;
+            font-size: 13px;
+        }
+
+        .top-content {
+            min-height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top-content span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .top-social a {
+            transition: .3s;
+        }
+
+        .top-social a:hover {
+            color: #4267a8;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .header {
+            height: 82px;
+
+            background: white;
+
+            border-bottom: 1px solid #e5e7eb;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+        }
+
+        .nav-container {
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            width: 180px;
+            height: 58px;
+
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-menu a {
+            color: #303641;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            position: relative;
+
+            transition: .3s;
+        }
+
+        .nav-menu a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 2px;
+
+            background: #173968;
+
+            transition: .3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #173968;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           VOLTAR
+        ===================================================== */
+
+        .back-container {
+
+            background: white;
+
+            padding: 20px 0;
+
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .back-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #173968;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .back-button:hover {
+
+            gap: 16px;
+
+            color: #0b2345;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .mc-hero {
+
+            min-height: 590px;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            color: white;
+
+            background:
+
+                radial-gradient(
+                    circle at 85% 35%,
+                    rgba(63, 101, 158, .35),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #050a13,
+                    #10233f,
+                    #07101f
+                );
+        }
+
+        .mc-hero::before {
+
+            content: "MC";
+
+            position: absolute;
+
+            right: -50px;
+            bottom: -100px;
+
+            font-size: 430px;
+
+            line-height: 1;
+
+            font-weight: 900;
+
+            color: rgba(255,255,255,.025);
+        }
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 800px;
+        }
+
+        .hero-label {
+
+            color: #719bd2;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+        }
+
+        .hero-content h1 {
+
+            font-size: clamp(65px, 11vw, 120px);
+
+            line-height: .85;
+
+            letter-spacing: -6px;
+
+            margin: 18px 0;
+        }
+
+        .hero-content h1 span {
+            color: #527db5;
+        }
+
+        .plus-ultra {
+
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border: 1px solid rgba(255,255,255,.35);
+
+            color: white;
+
+            font-size: 13px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+
+            margin-bottom: 22px;
+        }
+
+        .hero-content p {
+
+            color: #c8d2e1;
+
+            max-width: 680px;
+
+            font-size: 17px;
+        }
+
+
+        /* =====================================================
+           BOTÕES
+        ===================================================== */
+
+        .hero-buttons {
+
+            display: flex;
+
+            gap: 14px;
+
+            margin-top: 30px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn-blue {
+
+            background: #274f80;
+
+            color: white;
+
+            padding: 14px 22px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .btn-blue:hover {
+
+            background: #193b64;
+
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+
+            border: 1px solid rgba(255,255,255,.5);
+
+            color: white;
+
+            padding: 14px 22px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .btn-outline:hover {
+
+            background: white;
+
+            color: #10233f;
+        }
+
+
+        /* =====================================================
+           IDENTIDADE
+        ===================================================== */
+
+        .identity {
+
+            background: white;
+
+            padding: 90px 0;
+        }
+
+        .identity-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .section-label {
+
+            color: #315c91;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            font-weight: bold;
+        }
+
+        .identity h2 {
+
+            font-size: 44px;
+
+            line-height: 1.1;
+
+            margin: 12px 0 20px;
+        }
+
+        .identity h2 span {
+            color: #315c91;
+        }
+
+        .identity p {
+
+            color: #646b75;
+
+            font-size: 15px;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           CARDS DE IDENTIDADE
+        ===================================================== */
+
+        .identity-cards {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .identity-card {
+
+            padding: 30px;
+
+            background: #f1f4f8;
+
+            border: 1px solid #dce3ed;
+
+            transition: .3s;
+        }
+
+        .identity-card:hover {
+
+            transform: translateY(-6px);
+
+            border-color: #315c91;
+
+            box-shadow: 0 15px 30px rgba(10,30,60,.08);
+        }
+
+        .identity-card i {
+
+            color: #315c91;
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .identity-card h3 {
+
+            font-size: 18px;
+
+            margin-bottom: 5px;
+        }
+
+        .identity-card p {
+
+            margin: 0;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           ATUAÇÃO
+        ===================================================== */
+
+        .acting {
+
+            padding: 90px 0;
+
+            background: #f3f5f9;
+        }
+
+        .acting-header {
+
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: 0 auto 45px;
+        }
+
+        .acting-header h2 {
+
+            font-size: 40px;
+
+            margin: 10px 0;
+        }
+
+        .acting-header p {
+
+            color: #6c727d;
+        }
+
+        .acting-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .acting-card {
+
+            background: white;
+
+            padding: 35px 28px;
+
+            border: 1px solid #e0e5ec;
+
+            transition: .3s;
+        }
+
+        .acting-card:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow: 0 15px 35px rgba(0,0,0,.08);
+        }
+
+        .acting-card i {
+
+            font-size: 30px;
+
+            color: #315c91;
+
+            margin-bottom: 18px;
+        }
+
+        .acting-card h3 {
+
+            margin-bottom: 10px;
+
+            font-size: 20px;
+        }
+
+        .acting-card p {
+
+            color: #6b717b;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           GRITO
+        ===================================================== */
+
+        .chant-section {
+
+            padding: 95px 0;
+
+            color: white;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(69, 106, 161, .35),
+                    transparent 40%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #060b15,
+                    #102642
+                );
+        }
+
+        .chant-header {
+
+            text-align: center;
+
+            max-width: 800px;
+
+            margin: 0 auto 45px;
+        }
+
+        .chant-header span {
+
+            color: #78a3d9;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            font-weight: bold;
+        }
+
+        .chant-header h2 {
+
+            font-size: 44px;
+
+            margin: 10px 0;
+        }
+
+        .chant-header p {
+
+            color: #b8c5d6;
+        }
+
+        .chant-box {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 48px 35px;
+
+            background: rgba(255,255,255,.05);
+
+            border: 1px solid rgba(255,255,255,.12);
+
+            text-align: center;
+
+            box-shadow: 0 20px 60px rgba(0,0,0,.3);
+        }
+
+        .chant-box p {
+
+            font-size: 18px;
+
+            line-height: 2.1;
+
+            color: #edf2f8;
+        }
+
+        .chant-box .clap {
+
+            color: #78a3d9;
+
+            font-weight: bold;
+
+            font-size: 16px;
+        }
+
+        .chant-box .highlight {
+
+            color: #8db5e4;
+
+            font-weight: 900;
+
+            font-size: 21px;
+        }
+
+
+        /* =====================================================
+           INSTAGRAM
+        ===================================================== */
+
+        .instagram {
+
+            padding: 80px 0;
+
+            background: white;
+
+            text-align: center;
+        }
+
+        .instagram h2 {
+
+            font-size: 36px;
+
+            margin: 10px 0;
+        }
+
+        .instagram p {
+
+            color: #6b7078;
+
+            margin-bottom: 28px;
+        }
+
+        .instagram-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            background: #173968;
+
+            color: white;
+
+            padding: 15px 25px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .instagram-button:hover {
+
+            background: #0d294e;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+
+            background: #080d18;
+
+            color: white;
+
+            padding: 50px 0 25px;
+        }
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 35px;
+
+            border-bottom: 1px solid #202b3c;
+        }
+
+        .footer h3 {
+
+            margin-bottom: 15px;
+
+            font-size: 18px;
+        }
+
+        .footer p,
+        .footer a {
+
+            color: #929cab;
+
+            font-size: 13px;
+        }
+
+        .footer a {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            transition: .3s;
+        }
+
+        .footer a:hover {
+            color: #6f9ed7;
+        }
+
+        .footer-bottom {
+
+            padding-top: 22px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            color: #626c7b;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .nav-menu {
+                gap: 14px;
+            }
+
+            .identity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .acting-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .top-social {
+                display: none;
+            }
+
+            .top-content {
+                justify-content: center;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .mc-hero {
+                min-height: 520px;
+            }
+
+            .hero-content h1 {
+                letter-spacing: -2px;
+            }
+
+            .identity-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .chant-box {
+                padding: 30px 18px;
+            }
+
+            .chant-box p {
+                font-size: 15px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BARRA SUPERIOR
+    ===================================================== -->
+
+    <div class="top-bar">
+
+        <div class="container top-content">
+
+            <span>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Guarujá - SP
+
+            </span>
+
+            <span>
+
+                <i class="fa-solid fa-wolf-pack-battalion"></i>
+
+                MC • PLUS ULTRA
+
+            </span>
+
+            <div class="top-social">
+
+                <a
+                    href="https://www.instagram.com/thewolves3mc/"
+                    target="_blank">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="header">
+
+        <div class="container nav-container">
+
+
+            <a href="../html/index.html.html">
+    <img src="../Imagem/LOGO MC.png" alt="MI" style="height: 60px; width: auto;">
+            </a>
+
+
+            <nav class="nav-menu">
+
+                 
+                <a href="#sobre">Sobre</a>
+
+                <a href="#identidade">Identidade</a>
+
+                <a href="#Plus Ultra">Plus Ultra</a>
+
+                <a href="#lobo">Lobo</a>
+
+                <a href="#grito">Grito</a>
+
+                <a href="#atuacao">Atuação</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         VOLTAR PARA CURSOS
+    ===================================================== -->
+
+    <div class="back-container">
+
+        <div class="container">
+
+            <a
+                href="../html/index.html"
+                class="back-button">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="mc-hero">
+
+        <div class="container hero-content">
+
+            <span class="hero-label">
+                ENSINO MÉDIO • CIÊNCIAS HUMANAS
+            </span>
+
+            <h1>
+                M<span>C</span>
+            </h1>
+
+            <span class="plus-ultra">
+                PLUS ULTRA
+            </span>
+
+            <p>
+
+                Uma formação voltada para as
+                <strong>Ciências Humanas</strong>,
+                desenvolvendo pensamento crítico,
+                conhecimento histórico, social e cultural.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#identidade"
+                    class="btn-blue">
+
+                    Conheça o MC
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/thewolves3mc/"
+                    target="_blank"
+                    class="btn-outline">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    @thewolves3mc
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         IDENTIDADE
+    ===================================================== -->
+
+    <section class="identity" id="identidade">
+
+        <div class="container identity-grid">
+
+
+            <div>
+
+                <span class="section-label">
+                    IDENTIDADE MC
+                </span>
+
+                <h2>
+
+                    Sempre além.
+
+                    <span>
+                        Plus Ultra.
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    O MC representa o Ensino Médio com
+                    ênfase em <strong>Ciências Humanas</strong>,
+                    reunindo conhecimento, pensamento crítico
+                    e compreensão da sociedade.
+
+                </p>
+
+                <p>
+
+                    Sua identidade é marcada pelo
+                    <strong>azul escuro</strong>, pelo
+                    <strong>Lobo</strong> e pelo lema
+                    <strong>Plus Ultra</strong>.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="identity-cards">
+
+
+                <div class="identity-card">
+
+                    <i class="fa-solid fa-wolf-pack-battalion"></i>
+
+                    <h3>
+                        Mascote
+                    </h3>
+
+                    <p>
+                        Lobo
+                    </p>
+
+                </div>
+
+
+                <div class="identity-card">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    <h3>
+                        Cor
+                    </h3>
+
+                    <p>
+                        Azul escuro
+                    </p>
+
+                </div>
+
+
+                <div class="identity-card">
+
+                    <i class="fa-solid fa-flag"></i>
+
+                    <h3>
+                        Lema
+                    </h3>
+
+                    <p>
+                        Plus Ultra
+                    </p>
+
+                </div>
+
+
+                <div class="identity-card">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <h3>
+                        Curso
+                    </h3>
+
+                    <p>
+                        Ciências Humanas
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ATUAÇÃO
+    ===================================================== -->
+
+    <section class="acting">
+
+        <div class="container">
+
+
+            <div class="acting-header">
+
+                <span class="section-label">
+                    ATUAÇÃO
+                </span>
+
+                <h2>
+                    Conhecimento para compreender o mundo.
+                </h2>
+
+                <p>
+
+                    O MC desenvolve competências relacionadas
+                    à sociedade, cultura, história e pensamento crítico.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="acting-grid">
+
+
+                <div class="acting-card">
+
+                    <i class="fa-solid fa-landmark"></i>
+
+                    <h3>
+                        História
+                    </h3>
+
+                    <p>
+
+                        Estudo das sociedades, acontecimentos
+                        históricos e transformações que moldaram
+                        o mundo.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="acting-card">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                    <h3>
+                        Sociedade
+                    </h3>
+
+                    <p>
+
+                        Compreensão das relações sociais,
+                        culturais e políticas presentes
+                        na sociedade.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="acting-card">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    <h3>
+                        Pensamento crítico
+                    </h3>
+
+                    <p>
+
+                        Desenvolvimento da capacidade de
+                        analisar informações, questionar
+                        ideias e construir argumentos.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GRITO DO MC
+    ===================================================== -->
+
+    <section class="chant-section">
+
+        <div class="container">
+
+
+            <div class="chant-header">
+
+                <span>
+                    GRITO DO MC
+                </span>
+
+                <h2>
+                    EXPLODE CORAÇÃO
+                </h2>
+
+                <p>
+                    A voz dos Wolves.
+                </p>
+
+            </div>
+
+
+
+            <div class="chant-box">
+
+                <p>
+
+                    <span class="highlight">
+                        EXPLODE CORAÇÃO
+                    </span>
+
+                    <br>
+
+                    NA MAIOR ANIMAÇÃO
+
+                    <br>
+
+                    O MC CHEGOU
+
+                    <br>
+
+                    PRA SACUDIR PRA ABALAR A INTEGRAÇÃO
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br><br>
+
+
+                    CHEGOU COM TUDO
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br>
+
+                    PRA ABALAR
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br>
+
+                    O MC VEIO AQUI PARA GANHAR
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br><br>
+
+
+                    MAS QUEM NÓS SOMOS
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br>
+
+                    O MC
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br>
+
+                    DAMOS A PRATA E O BRONZE PRA VOCÊS
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br><br>
+
+
+                    BRAÇOS DE FERRO
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br>
+
+                    PUNHOS DE AÇO
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br>
+
+                    O MC MANDA NO PEDAÇO
+
+                    <br><br>
+
+
+                    MAS QUEM NÓS SOMOS?
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br>
+
+                    O MC
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br>
+
+                    O QUE FAREMOS?
+
+                    <br>
+
+                    SAMBAREMOS EM VOCÊS
+
+                    <br><br>
+
+
+                    BRAÇOS DE FERRO
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br>
+
+                    PUNHOS DE AÇO
+
+                    <br>
+
+                    <span class="clap">
+                        👏👏👏
+                    </span>
+
+                    <br>
+
+                    <span class="highlight">
+                        O MC MANDA NO PEDAÇOOOOOO!
+                    </span>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INSTAGRAM
+    ===================================================== -->
+
+    <section class="instagram">
+
+        <div class="container">
+
+            <span class="section-label">
+                REDES SOCIAIS
+            </span>
+
+            <h2>
+                Conheça os Wolves
+            </h2>
+
+            <p>
+
+                Acompanhe o MC e fique por dentro
+                das novidades da turma.
+
+            </p>
+
+
+            <a
+                href="https://www.instagram.com/thewolves3mc/"
+                target="_blank"
+                class="instagram-button">
+
+                <i class="fa-brands fa-instagram"></i>
+
+                @thewolves3mc
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <div>
+
+                    <h3>
+                        MC • Plus Ultra
+                    </h3>
+
+                    <p>
+
+                        Ensino Médio com ênfase
+                        em Ciências Humanas.
+
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <h3>
+                        Navegação
+                    </h3>
+
+                    <a href="index.html">
+                        Início
+                    </a>
+
+                    <a href="sobre.html">
+                        A Etec
+                    </a>
+
+                    <a href="cursos.html">
+                        Cursos
+                    </a>
+
+                    <a href="parceiros.html">
+                        Parceiros
+                    </a>
+
+                    <a href="noticias.html">
+                        Notícias
+                    </a>
+
+                    <a href="eventos.html">
+                        Eventos
+                    </a>
+
+                    <a href="contato.html">
+                        Contato
+                    </a>
+
+                </div>
+
+
+
+                <div>
+
+                    <h3>
+                        Redes sociais
+                    </h3>
+
+                    <a
+                        href="https://www.instagram.com/thewolves3mc/"
+                        target="_blank">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                        Instagram
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Etec Alberto Santos Dumont
+                </span>
+
+                <span>
+                    MC • PLUS ULTRA
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
